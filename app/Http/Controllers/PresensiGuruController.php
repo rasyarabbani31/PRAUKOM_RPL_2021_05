@@ -32,6 +32,10 @@ class PresensiGuruController extends Controller
 
     public function storepresensiguru(Request $request)
     {
+        $request->validate([
+            'kode_guru' => 'required',
+            'kode_keterangan' => 'required'
+        ]);
 
         PresensiGuru::insert([
         'tanggal' => $request->tanggal,
@@ -53,7 +57,12 @@ class PresensiGuruController extends Controller
     }
 
     public function updatepresensiguru(Request $request, $id)
-    {
+    {   
+        $request->validate([
+            'kode_guru' => 'required',
+            'kode_keterangan' => 'required'
+        ]);
+        
         PresensiGuru::where('id', $id)->update([ 
         'tanggal' => $request->tanggal,
         'kode_guru' => $request->kode_guru,

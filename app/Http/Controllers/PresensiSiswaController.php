@@ -39,6 +39,12 @@ class PresensiSiswaController extends Controller
 
     public function storepresensisiswa(Request $request)
     {
+        $request->validate([
+            'kode_siswa' => 'required',
+            'kode_kelas' => 'required',
+            'kode_jurusan' => 'required',
+            'kode_keterangan' => 'required'
+        ]);
 
         Presensisiswa::insert([
         'tanggal' => $request->tanggal,
@@ -63,7 +69,14 @@ class PresensiSiswaController extends Controller
     }
 
     public function updatepresensisiswa(Request $request, $id)
-    {
+    {   
+        $request->validate([
+            'kode_siswa' => 'required',
+            'kode_kelas' => 'required',
+            'kode_jurusan' => 'required',
+            'kode_keterangan' => 'required'
+        ]);
+        
         PresensiSiswa::where('id', $id)->update([ 
         'tanggal' => $request->tanggal,
         'kode_siswa' => $request->kode_siswa,

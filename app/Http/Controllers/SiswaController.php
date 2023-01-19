@@ -34,6 +34,10 @@ class SiswaController extends Controller
 
     public function storesiswa(Request $request)
     {
+        $request->validate([
+            'kode_kelas'=>'required',
+            'kode_jurusan'=>'required'
+        ]);
 
         Siswa::insert([
         'nama_siswa' => $request->nama_siswa,
@@ -55,7 +59,12 @@ class SiswaController extends Controller
     }
 
     public function updatesiswa(Request $request, $id)
-    {
+    {   
+        $request->validate([
+            'kode_kelas'=>'required',
+            'kode_jurusan'=>'required'
+        ]);
+        
         Siswa::where('id', $id)->update([ 
             'nama_siswa' => $request->nama_siswa, 
             'jk_siswa' => $request->jk_siswa, 

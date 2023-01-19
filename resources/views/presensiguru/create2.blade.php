@@ -223,6 +223,9 @@
                           </option>
                         @endforeach
                       </select>
+                      @error('kode_guru')
+                                    <p class="text-red-700">Maaf, Data Guru Tidak Ada</p>
+                      @enderror
 
                       <label class="label">
                         <span class="label-text text-black">Keterangan</span>
@@ -235,6 +238,10 @@
                           </option>
                         @endforeach
                     </select>
+                    @error('kode_keterangan')
+                                    <p class="text-red-700">Maaf, Data Keterangan Tidak Ada</p>
+                    @enderror
+
                       <h1>Agenda KBM</h1>
             		      <input type="text" name="agenda_kbm" placeholder="agenda kbm" class="input input-bordered w-full max-w-xs bg-white" required />
                 	<div class="card-actions justify-end">

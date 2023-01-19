@@ -217,6 +217,9 @@
                           </option>
                         @endforeach
                       </select>
+                      @error('kode_siswa')
+                                    <p class="text-red-700">Maaf, Data Siswa Tidak Ada</p>
+                      @enderror
 
                       <label class="label">
                         <span class="label-text text-black">Kelas</span>
@@ -229,6 +232,9 @@
                           </option>
                         @endforeach
                         </select>
+                    @error('kode_kelas')
+                                    <p class="text-red-700">Maaf, Data Kelas Tidak Ada</p>
+                    @enderror
 
                         <label class="label">
                         <span class="label-text text-black">Nama jurusan</span>
@@ -241,6 +247,9 @@
                           </option>
                         @endforeach
                       </select>
+                      @error('kode_jurusan')
+                                    <p class="text-red-700">Maaf, Data Jurusan Tidak Ada</p>
+                    @enderror
 
                       <label class="label">
                         <span class="label-text text-black">Keterangan</span>
@@ -253,6 +262,11 @@
                           </option>
                         @endforeach
                         </select>
+                    @error('kode_keterangan')
+                                    <p class="text-red-700">Maaf, Data Keterangan Tidak Ada</p>
+                    @enderror
+
+
                 	<div class="card-actions justify-end">
                         <button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
