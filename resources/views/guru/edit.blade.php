@@ -57,18 +57,18 @@
         <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/guru">DAFTAR GURU</a>
+        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
+        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
       </li>
     </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn bg-red-400 text-white" href="">LOGOUT</a>
+      <a class="btn bg-red-400 text-black" href="">LOGOUT</a>
     </div>
   </div>
 </div>

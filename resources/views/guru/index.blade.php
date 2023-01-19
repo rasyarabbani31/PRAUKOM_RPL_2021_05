@@ -37,7 +37,7 @@
       </li>
       </ul>
     </div>
-    <a class="btn btn-ghost normal-case text-xl" href="/about">ALINGGAM</a>
+    <a class="btn btn-ghost normal-case text-xl text-black" href="/about">ALINGGAM</a>
   </div>
 
 
@@ -57,13 +57,13 @@
         <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/guru">DAFTAR GURU</a>
+        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
+        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
       </li>
     </ul>
     </div>

@@ -57,13 +57,13 @@
         <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/guru">DAFTAR GURU</a>
+        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
+        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
       </li>
     </ul>
     </div>
@@ -201,7 +201,7 @@
 		          <form action='/tingkatan' method='post'>
                   @csrf
                       <h1>Tingkatan</h1>
-                    	<input type="TEXT" name="tingkatan" placeholder="tingkatan" class="input input-bordered w-full max-w-xs bg-white" />
+                    	<input type="TEXT" name="tingkatan" id="tingkatan" placeholder="tingkatan" class="input input-bordered w-full max-w-xs bg-white" required />
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 

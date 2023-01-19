@@ -9,7 +9,8 @@ class Tingkatan extends Model
 {
     use HasFactory;
 
+    protected $fillable =['tingkatan'];
     protected $table = 'kelas';
-
+    public $timestamp = false;
     protected $guarded = [];
 }

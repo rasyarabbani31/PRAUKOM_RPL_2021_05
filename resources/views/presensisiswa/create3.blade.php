@@ -57,13 +57,13 @@
         <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/guru">DAFTAR GURU</a>
+        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
+        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
       </li>
     </ul>
     </div>
@@ -203,7 +203,7 @@
                 <h2 class="text-black text-center">TAMBAH PRESENSI SISWA</h2>
                   @csrf
                       <h1 class="text-black">Tanggal</h1>
-                    	<input type="date" name="tanggal" placeholder="tanggal" class="input input-bordered w-full max-w-xs bg-white" />
+                    	<input type="date" name="tanggal" placeholder="tanggal" class="input input-bordered w-full max-w-xs bg-white" required/>
                       <label class="label">
                         <span class="label-text text-black">Nama Siswa</span>
                       </label>

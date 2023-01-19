@@ -57,13 +57,13 @@
         <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/guru">DAFTAR GURU</a>
+        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
+        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
       </li>
     </ul>
     </div>
@@ -201,9 +201,9 @@
 		          <form action='/guru' method='post'>
                   @csrf
                       <h1 class="text-black">Nama</h1>
-                    	<input type="text" name="nama_guru" placeholder="Nama Guru" class="input input-bordered w-full max-w-xs bg-white" />
+                    	<input type="text" name="nama_guru" placeholder="Nama Guru" class="input input-bordered w-full max-w-xs bg-white" required/>
                       <h1 class="text-black">Jenis Kelamin</h1>
-            		      <input type="text" name="jk_guru" placeholder="Jk Guru" class="input input-bordered w-full max-w-xs bg-white" />
+            		      <input type="text" name="jk_guru" placeholder="Jk Guru" class="input input-bordered w-full max-w-xs bg-white" required/>
                 	<div class="card-actions justify-end">
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>

@@ -57,19 +57,21 @@
         <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/guru">DAFTAR GURU</a>
+        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
+        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
       </li>
     </ul>
     </div>
     <div class="navbar-end">
       <a class="btn bg-red-400 text-black" href="">LOGOUT</a>
     </div>
+  </div>
+</div>
   </div>
 </div>
 
@@ -205,7 +207,7 @@
 		          <form action='/presensiguru' method='post'>
                   @csrf
                       <h1>Tanggal</h1>
-                    	<input type="date" name="tanggal" placeholder="tanggal" class="input input-bordered w-full max-w-xs bg-white" />
+                    	<input type="date" name="tanggal" placeholder="tanggal" class="input input-bordered w-full max-w-xs bg-white" required />
                       <!--<h1>Guru</h1>
                     	<input type="text" name="kode_guru" placeholder="Guru" class="input input-bordered w-full max-w-xs" />
                       <h1>Keterangan Hadir</h1>
@@ -234,7 +236,7 @@
                         @endforeach
                     </select>
                       <h1>Agenda KBM</h1>
-            		      <input type="text" name="agenda_kbm" placeholder="agenda kbm" class="input input-bordered w-full max-w-xs bg-white" />
+            		      <input type="text" name="agenda_kbm" placeholder="agenda kbm" class="input input-bordered w-full max-w-xs bg-white" required />
                 	<div class="card-actions justify-end">
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>

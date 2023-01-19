@@ -57,13 +57,13 @@
         <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/guru">DAFTAR GURU</a>
+        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
+        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
       </li>
     </ul>
     </div>
@@ -202,9 +202,9 @@
 		          <form action='/siswa' method='post'>
                   @csrf
                       <h1>Nama</h1>
-                    	<input type="text" name="nama_siswa" placeholder="Nama Siswa" class="input input-bordered w-full max-w-xs bg-white" />
+                    	<input type="text" name="nama_siswa" placeholder="Nama Siswa" class="input input-bordered w-full max-w-xs bg-white" required/>
                       <h1>Jenis Kelamin</h1>
-            		      <input type="text" name="jk_siswa" placeholder="Jk Siswa" class="input input-bordered w-full max-w-xs bg-white" />
+            		      <input type="text" name="jk_siswa" placeholder="Jk Siswa" class="input input-bordered w-full max-w-xs bg-white" required/>
                       <label class="label">
 
                         <span class="label-text text-black">Kelas</span>

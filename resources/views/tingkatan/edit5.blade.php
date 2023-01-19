@@ -57,13 +57,13 @@
         <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/guru">DAFTAR GURU</a>
+        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
+        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
       </li>
     </ul>
     </div>
@@ -203,7 +203,7 @@
 
                   @csrf
                       <h1>Tingkatan</h1>
-                    	<input type="text" name="tingkatan" value="{{ $tingkatan->tingkatan }}" placeholder="tingkatan" class="input input-bordered w-full max-w-xs bg-white" />
+                    	<input type="text" name="tingkatan" value="{{ $tingkatan->tingkatan }}" placeholder="tingkatan" class="input input-bordered w-full max-w-xs" />
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 
