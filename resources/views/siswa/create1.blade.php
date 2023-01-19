@@ -210,7 +210,7 @@
                         <span class="label-text text-black">Kelas</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs bg-white" name="kode_kelas" required>
-                        <option disable selected>-- Pilih Kelas --</option>
+                        <option disabled selected>-- Pilih Kelas --</option>
                         @foreach($kelas2 as $item01)
                           <option value="{{ $item01->id }}">
                           {{ $item01->tingkatan }}
@@ -222,7 +222,7 @@
                         <span class="label-text text-black">Nama jurusan</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs bg-white" name="kode_jurusan" required>
-                        <option disable selected>-- Pilih jurusan --</option>
+                        <option disabled selected>-- Pilih jurusan --</option>
                         @foreach($jurusan2 as $item02)
                           <option value="{{ $item02->id }}">
                           {{ $item02->nama_jurusan }}

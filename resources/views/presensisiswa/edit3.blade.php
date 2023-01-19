@@ -196,23 +196,21 @@
 </div> -->
         
         <div class="card w-96 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
-          <div class="card-body">
+          <div class="card-body text-black">
           <p class="text-center">EDIT PRESENSI SISWA</p>
                   <form action="/presensisiswa/{{ $presensisiswa->id }}" method="post">
-
-                      <h2 class="text-white text-center">EDIT PRESENSI SISWA</h2>
 
                   @method('PUT')
                   
                   @csrf
 
                       <h1 class="text-black">Tanggal</h1>
-                    	<input type="date" name="tanggal" value="{{ $presensisiswa->tanggal }}" placeholder="tanggal" class="input input-bordered w-full max-w-xs" />
+                    	<input type="date" name="tanggal" value="{{ $presensisiswa->tanggal }}" placeholder="tanggal" class="input input-bordered w-full max-w-xs bg-white" />
                       <label class="label">
                         <span class="label-text text-black">Nama Siswa</span>
                       </label>
-                      <select class="select select-bordered w-full max-w-xs" name="kode_siswa" required>
-                        <option disable selected>-- Pilih Siswa --</option>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_siswa" required>
+                        <option disabled selected>-- Pilih Siswa --</option>
                         @foreach($siswa1 as $item4)
                           <option value="{{ $item4->id }}">
                           {{ $item4->nama_siswa }}
@@ -223,8 +221,8 @@
                       <label class="label">
                         <span class="label-text text-black">Kelas</span>
                       </label>
-                      <select class="select select-bordered w-full max-w-xs" name="kode_kelas" required>
-                        <option disable selected>-- Pilih Kelas --</option>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_kelas" required>
+                        <option disabled selected>-- Pilih Kelas --</option>
                         @foreach($kelas1 as $item2)
                           <option value="{{ $item2->id }}">
                           {{ $item2->tingkatan }}
@@ -235,8 +233,8 @@
                         <label class="label">
                         <span class="label-text text-black">Nama jurusan</span>
                       </label>
-                      <select class="select select-bordered w-full max-w-xs" name="kode_jurusan" required>
-                        <option disable selected>-- Pilih jurusan --</option>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_jurusan" required>
+                        <option disabled selected>-- Pilih jurusan --</option>
                         @foreach($jurusan1 as $item3)
                           <option value="{{ $item3->id }}">
                           {{ $item3->nama_jurusan }}
@@ -247,8 +245,8 @@
                       <label class="label">
                         <span class="label-text text-black">Keterangan</span>
                       </label>
-                      <select class="select select-bordered w-full max-w-xs" name="kode_keterangan" required>
-                        <option disable selected>-- Pilih Keterangan --</option>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_keterangan" required>
+                        <option disabled selected>-- Pilih Keterangan --</option>
                         @foreach($keterangan1 as $item1)
                           <option value="{{ $item1->id }}">
                           {{ $item1->keterangan }}
