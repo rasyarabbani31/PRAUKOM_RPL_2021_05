@@ -26,7 +26,10 @@ class SiswaController extends Controller
     public function createsiswa()
 
     {
-        return view('siswa.create1');
+        $kelas2 = DB::table('kelas') ->get();
+        $jurusan2 = DB::table('jurusan') ->get();
+
+        return view('siswa.create1', compact('kelas2', 'jurusan2'));
     }
 
     public function storesiswa(Request $request)
@@ -45,8 +48,10 @@ class SiswaController extends Controller
     public function editsiswa($id)
     {
         $siswa = Siswa::where('id', $id)->first();
+        $kelas2 = DB::table('kelas') ->get();
+        $jurusan2 = DB::table('jurusan') ->get();
 
-        return view('siswa.edit1', ['siswa' => $siswa]);
+        return view('siswa.edit1', ['siswa' => $siswa], compact('kelas2', 'jurusan2'));
     }
 
     public function updatesiswa(Request $request, $id)

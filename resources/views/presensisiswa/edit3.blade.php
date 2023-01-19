@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JURUSAN</title>
+  <title>GURU</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -194,23 +194,72 @@
           </div>
    </div>
 </div> -->
+        
+        <div class="card w-96 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
+          <div class="card-body">
+          <p class="text-center">EDIT PRESENSI SISWA</p>
+                  <form action="/presensisiswa/{{ $presensisiswa->id }}" method="post">
 
-        <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
-            @csrf
-            <div class="card-body text-black">
-            <p class="text-center">EDIT JURUSAN</p>
-		          <form action='/jurusan/{{ $jurusan->id }}' method='post'>
+                      <h2 class="text-white text-center">EDIT PRESENSI SISWA</h2>
+
                   @method('PUT')
-
+                  
                   @csrf
-                      <h1>Jurusan</h1>
-                    	<input type="text" name="nama_jurusan" value="{{ $jurusan->nama_jurusan }}" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                      <h1>Singkatan Jurusan</h1>
-                    	<input type="text" name="singkatan_jurusan" value="{{ $jurusan->singkatan_jurusan }}" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                    		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
+
+                      <h1 class="text-black">Tanggal</h1>
+                    	<input type="date" name="tanggal" value="{{ $presensisiswa->tanggal }}" placeholder="tanggal" class="input input-bordered w-full max-w-xs" />
+                      <label class="label">
+                        <span class="label-text text-black">Nama Siswa</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs" name="kode_siswa" required>
+                        <option disable selected>-- Pilih Siswa --</option>
+                        @foreach($siswa1 as $item4)
+                          <option value="{{ $item4->id }}">
+                          {{ $item4->nama_siswa }}
+                          </option>
+                        @endforeach
+                      </select>
+
+                      <label class="label">
+                        <span class="label-text text-black">Kelas</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs" name="kode_kelas" required>
+                        <option disable selected>-- Pilih Kelas --</option>
+                        @foreach($kelas1 as $item2)
+                          <option value="{{ $item2->id }}">
+                          {{ $item2->tingkatan }}
+                          </option>
+                        @endforeach
+                        </select>
+
+                        <label class="label">
+                        <span class="label-text text-black">Nama jurusan</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs" name="kode_jurusan" required>
+                        <option disable selected>-- Pilih jurusan --</option>
+                        @foreach($jurusan1 as $item3)
+                          <option value="{{ $item3->id }}">
+                          {{ $item3->nama_jurusan }}
+                          </option>
+                        @endforeach
+                      </select>
+
+                      <label class="label">
+                        <span class="label-text text-black">Keterangan</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs" name="kode_keterangan" required>
+                        <option disable selected>-- Pilih Keterangan --</option>
+                        @foreach($keterangan1 as $item1)
+                          <option value="{{ $item1->id }}">
+                          {{ $item1->keterangan }}
+                          </option>
+                        @endforeach
+                        </select>
+                	<div class="card-actions justify-end">
+                        <button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 
-            </div>
+          </div>
         </div>
 
         

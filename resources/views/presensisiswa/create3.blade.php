@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JURUSAN</title>
-  @vite('resources/css/app.css')
+  <title>CREATE</title>
+   @vite('resources/css/app.css')
 </head>
 <body>
 
@@ -197,16 +197,60 @@
 
         <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
             @csrf
-            <div class="card-body text-black">
-            <p class="text-center">EDIT JURUSAN</p>
-		          <form action='/jurusan/{{ $jurusan->id }}' method='post'>
-                  @method('PUT')
-
+            <div class="card-body">
+            <p class="text-center">BUAT PRESENSI SISWA</p>
+		          <form action='/presensisiswa' method='post'>
+                <h2 class="text-black text-center">TAMBAH PRESENSI SISWA</h2>
                   @csrf
-                      <h1>Jurusan</h1>
-                    	<input type="text" name="nama_jurusan" value="{{ $jurusan->nama_jurusan }}" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                      <h1>Singkatan Jurusan</h1>
-                    	<input type="text" name="singkatan_jurusan" value="{{ $jurusan->singkatan_jurusan }}" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
+                      <h1 class="text-black">Tanggal</h1>
+                    	<input type="date" name="tanggal" placeholder="tanggal" class="input input-bordered w-full max-w-xs bg-white" />
+                      <label class="label">
+                        <span class="label-text text-black">Nama Siswa</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_siswa" required>
+                        <option disable selected>-- Pilih Siswa --</option>
+                        @foreach($siswa1 as $item4)
+                          <option value="{{ $item4->id }}">
+                          {{ $item4->nama_siswa }}
+                          </option>
+                        @endforeach
+                      </select>
+
+                      <label class="label">
+                        <span class="label-text text-black">Kelas</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_kelas" required>
+                        <option disable selected>-- Pilih Kelas --</option>
+                        @foreach($kelas1 as $item2)
+                          <option value="{{ $item2->id }}">
+                          {{ $item2->tingkatan }}
+                          </option>
+                        @endforeach
+                        </select>
+
+                        <label class="label">
+                        <span class="label-text text-black">Nama jurusan</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_jurusan" required>
+                        <option disable selected>-- Pilih jurusan --</option>
+                        @foreach($jurusan1 as $item3)
+                          <option value="{{ $item3->id }}">
+                          {{ $item3->nama_jurusan }}
+                          </option>
+                        @endforeach
+                      </select>
+
+                      <label class="label">
+                        <span class="label-text text-black">Keterangan</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_keterangan" required>
+                        <option disable selected>-- Pilih Keterangan --</option>
+                        @foreach($keterangan1 as $item1)
+                          <option value="{{ $item1->id }}">
+                          {{ $item1->keterangan }}
+                          </option>
+                        @endforeach
+                        </select>
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 

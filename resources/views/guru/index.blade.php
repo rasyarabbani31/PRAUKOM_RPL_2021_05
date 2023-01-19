@@ -203,7 +203,7 @@
               <div class="card-actions justify-end">
                     		<a class="btn bg-blue-400 text-black" href="/guru/create">TAMBAH</a>
               </div>
-              <tr class="space-x-4 text-white">
+              <tr class="space-x-4 text-white text-center">
                   <th>NO</th>
                   <th>Nama</th>
                   <th>Jenis Kelamin</th>
@@ -214,7 +214,7 @@
             <tbody>
                 @foreach($gurus as $guru)
                 <tr class="text-white">
-                  <th>{{ $loop->iteration }}</th>
+                  <th class="text-center">{{ $loop->iteration }}</th>
                   <td class="text-center">{{ $guru->nama_guru }}</td>
                   <td class="text-center">{{ $guru->jk_guru }}</td>
                   <td><a class="btn btn-sm bg-yellow-400 text-black" href="/guru/{{ $guru->id }}/edit">EDIT</a></td>

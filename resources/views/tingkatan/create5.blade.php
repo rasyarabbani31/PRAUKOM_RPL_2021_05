@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JURUSAN</title>
+  <title>TINGKATAN</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -198,15 +198,10 @@
         <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
             @csrf
             <div class="card-body text-black">
-            <p class="text-center">EDIT JURUSAN</p>
-		          <form action='/jurusan/{{ $jurusan->id }}' method='post'>
-                  @method('PUT')
-
+		          <form action='/tingkatan' method='post'>
                   @csrf
-                      <h1>Jurusan</h1>
-                    	<input type="text" name="nama_jurusan" value="{{ $jurusan->nama_jurusan }}" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                      <h1>Singkatan Jurusan</h1>
-                    	<input type="text" name="singkatan_jurusan" value="{{ $jurusan->singkatan_jurusan }}" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
+                      <h1>Tingkatan</h1>
+                    	<input type="TEXT" name="tingkatan" placeholder="tingkatan" class="input input-bordered w-full max-w-xs bg-white" />
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 

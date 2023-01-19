@@ -198,12 +198,13 @@
         <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
             @csrf
             <div class="card-body text-black">
+            <p class="text-center">TAMBAH JURUSAN</p>
 		          <form action='/jurusan' method='post'>
                   @csrf
                       <h1>Nama Jurusan</h1>
-                    	<input type="text" name="nama_jurusan" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-white" />
+                    	<input type="text" name="nama_jurusan" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-white bg-white" />
                       <h1>Singkatan Jurusan</h1>
-                    	<input type="text" name="singkatan_jurusan" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-white" />
+                    	<input type="text" name="singkatan_jurusan" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-white bg-white" />
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JURUSAN</title>
+  <title>PRESENSI GURU</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -75,10 +75,9 @@
 
 
 
-
 <!-- <div class="navbar  bg-primary">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl text-white" href="/about">ALINGGAM</a>
+    <a class="btn btn-ghost normal-case text-xl text-black" href="/about">ALINGGAM</a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal p-0">
@@ -195,25 +194,50 @@
    </div>
 </div> -->
 
-        <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
-            @csrf
-            <div class="card-body text-black">
-            <p class="text-center">EDIT JURUSAN</p>
-		          <form action='/jurusan/{{ $jurusan->id }}' method='post'>
-                  @method('PUT')
-
-                  @csrf
-                      <h1>Jurusan</h1>
-                    	<input type="text" name="nama_jurusan" value="{{ $jurusan->nama_jurusan }}" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                      <h1>Singkatan Jurusan</h1>
-                    	<input type="text" name="singkatan_jurusan" value="{{ $jurusan->singkatan_jurusan }}" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                    		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
-                	</div>
-		          </form> 
-            </div>
+  <div class="card w-1/2 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
+      <div class="card-body">
+        <div class="overflow-x-auto shadow-xl text-primary-content">
+          <table class="table w-full text-primary-content">
+            <thead>
+              <div class="card-actions justify-end">
+                    		<a class="btn bg-blue-400 text-black" href="/presensiguru/create">TAMBAH</a>
+              </div>
+              <tr class="space-x-4 text-white text-center">
+                  <th>NO</th>
+                  <th>Tanggal</th>
+                  <th>Guru</th>
+                  <th>Keterangan Hadir</th>
+                  <th>Agenda KBM</th>
+                  <th></th>
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach($guru as $presensiguru)
+                <tr class="text-white">
+                  <th class="text-center">{{ $loop->iteration }}</th>
+                  <td class="text-center">{{ $presensiguru->tanggal }}</td>
+                  <td class="text-center">{{ $presensiguru->nama_guru }}</td>
+                  <td class="text-center">{{ $presensiguru->keterangan }}</td>
+                  <td class="text-center">{{ $presensiguru->agenda_kbm }}</td>
+                  <td><a class="btn btn-sm bg-yellow-400 text-black" href="/presensiguru/{{ $presensiguru->id }}/edit">EDIT</a></td>
+                  <td>
+                        <form action="/presensiguru/{{ $presensiguru->id }}" method="post">
+                            @csrf
+                            @method("delete")
+                            <button class="btn btn-sm bg-red-400 text-black" type="submit">DELETE</button>
+                        </form>
+                  </td>
+                </tr>
+                @endforeach
+            </tbody>
+          </table>
         </div>
+      </div>
+   </div>
 
-        
+
+
 <div class="p-16">
   <div class="max-w-4xl mx-auto relative" x-data="{
       activeSlide= 1,
@@ -228,7 +252,7 @@
 
       <!-- data loop -->
       <template x-for="slide in slides" :key="slide.id">
-           <div x-show="activeSlide === slide.id" class="p-24 h-80 flex items-center bg-slate-500 text-white rounded-lg"></div>
+           <div x-show="activeSlide === slide.id" class="p-24 h-80 flex items-center bg-slate-500 text-black rounded-lg"></div>
       </template>
 
       <!-- next -->

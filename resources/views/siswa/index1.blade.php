@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JURUSAN</title>
+  <title>SISWA</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -72,7 +72,6 @@
     </div>
   </div>
 </div>
-
 
 
 
@@ -195,25 +194,50 @@
    </div>
 </div> -->
 
-        <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
-            @csrf
-            <div class="card-body text-black">
-            <p class="text-center">EDIT JURUSAN</p>
-		          <form action='/jurusan/{{ $jurusan->id }}' method='post'>
-                  @method('PUT')
-
-                  @csrf
-                      <h1>Jurusan</h1>
-                    	<input type="text" name="nama_jurusan" value="{{ $jurusan->nama_jurusan }}" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                      <h1>Singkatan Jurusan</h1>
-                    	<input type="text" name="singkatan_jurusan" value="{{ $jurusan->singkatan_jurusan }}" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                    		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
-                	</div>
-		          </form> 
-            </div>
+  <div class="card w-1/2 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
+      <div class="card-body">
+        <div class="overflow-x-auto shadow-xl text-primary-content">
+          <table class="table w-full text-primary-content">
+            <thead>
+              <div class="card-actions justify-end">
+                    		<a class="btn bg-primary text-white" href="/siswa/create">TAMBAH</a>
+              </div>
+              <tr class="space-x-4 text-white text-center">
+                  <th>NO</th>
+                  <th>Nama</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Kelas</th>
+                  <th>Jurusan</th>
+                  <th></th>
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach($siswas as $siswa)
+                <tr class="text-white">
+                  <th class="text-center">{{ $loop->iteration }}</th>
+                  <td class="text-center">{{ $siswa->nama_siswa }}</td>
+                  <td class="text-center">{{ $siswa->jk_siswa }}</td>
+                  <td class="text-center">{{ $siswa->tingkatan }}</td>
+                  <td class="text-center">{{ $siswa->nama_jurusan }}</td>
+                  <td><a class="btn btn-sm bg-yellow-400 text-black" href="/siswa/{{ $siswa->id }}/edit">EDIT</a></td>
+                  <td>
+                        <form action="/siswa/{{ $siswa->id }}" method="post">
+                            @csrf
+                            @method("delete")
+                            <button class="btn btn-sm bg-red-400 text-black" type="submit">DELETE</button>
+                        </form>
+                  </td>
+                </tr>
+                @endforeach
+            </tbody>
+          </table>
         </div>
+      </div>
+   </div>
 
-        
+
+
 <div class="p-16">
   <div class="max-w-4xl mx-auto relative" x-data="{
       activeSlide= 1,

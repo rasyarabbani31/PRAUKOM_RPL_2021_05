@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JURUSAN</title>
+  <title>SISWA</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -198,15 +198,38 @@
         <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
             @csrf
             <div class="card-body text-black">
-            <p class="text-center">EDIT JURUSAN</p>
-		          <form action='/jurusan/{{ $jurusan->id }}' method='post'>
-                  @method('PUT')
-
+            <p class="text-center">BUAT SISWA</p>
+		          <form action='/siswa' method='post'>
                   @csrf
-                      <h1>Jurusan</h1>
-                    	<input type="text" name="nama_jurusan" value="{{ $jurusan->nama_jurusan }}" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                      <h1>Singkatan Jurusan</h1>
-                    	<input type="text" name="singkatan_jurusan" value="{{ $jurusan->singkatan_jurusan }}" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
+                      <h1>Nama</h1>
+                    	<input type="text" name="nama_siswa" placeholder="Nama Siswa" class="input input-bordered w-full max-w-xs bg-white" />
+                      <h1>Jenis Kelamin</h1>
+            		      <input type="text" name="jk_siswa" placeholder="Jk Siswa" class="input input-bordered w-full max-w-xs bg-white" />
+                      <label class="label">
+
+                        <span class="label-text text-black">Kelas</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_kelas" required>
+                        <option disable selected>-- Pilih Kelas --</option>
+                        @foreach($kelas2 as $item01)
+                          <option value="{{ $item01->id }}">
+                          {{ $item01->tingkatan }}
+                          </option>
+                        @endforeach
+                        </select>
+
+                        <label class="label">
+                        <span class="label-text text-black">Nama jurusan</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_jurusan" required>
+                        <option disable selected>-- Pilih jurusan --</option>
+                        @foreach($jurusan2 as $item02)
+                          <option value="{{ $item02->id }}">
+                          {{ $item02->nama_jurusan }}
+                          </option>
+                        @endforeach
+                      </select>
+                	<div class="card-actions justify-end">
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JURUSAN</title>
+  <title>GURU</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -195,18 +195,47 @@
    </div>
 </div> -->
 
+
+
+
         <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
             @csrf
             <div class="card-body text-black">
-            <p class="text-center">EDIT JURUSAN</p>
-		          <form action='/jurusan/{{ $jurusan->id }}' method='post'>
-                  @method('PUT')
-
+            <p class="text-center">BUAT PRESENSI GURU</p>
+		          <form action='/presensiguru' method='post'>
                   @csrf
-                      <h1>Jurusan</h1>
-                    	<input type="text" name="nama_jurusan" value="{{ $jurusan->nama_jurusan }}" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
-                      <h1>Singkatan Jurusan</h1>
-                    	<input type="text" name="singkatan_jurusan" value="{{ $jurusan->singkatan_jurusan }}" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" />
+                      <h1>Tanggal</h1>
+                    	<input type="date" name="tanggal" placeholder="tanggal" class="input input-bordered w-full max-w-xs bg-white" />
+                      <!--<h1>Guru</h1>
+                    	<input type="text" name="kode_guru" placeholder="Guru" class="input input-bordered w-full max-w-xs" />
+                      <h1>Keterangan Hadir</h1>
+            		      <input type="text" name="kode_keterangan" placeholder="Keterangan" class="input input-bordered w-full max-w-xs" />-->
+                      <label class="label">
+                        <span class="label-text text-black">Nama Guru</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_guru" required>
+                        <option disable selected>-- Pilih Guru --</option>
+                        @foreach($guru1 as $item)
+                          <option value="{{ $item->id }}">
+                          {{ $item->nama_guru }}
+                          </option>
+                        @endforeach
+                      </select>
+
+                      <label class="label">
+                        <span class="label-text text-black">Keterangan</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_keterangan" required>
+                        <option disable selected>-- Pilih Keterangan --</option>
+                        @foreach($keterangan as $item1)
+                          <option value="{{ $item1->id }}">
+                          {{ $item1->keterangan }}
+                          </option>
+                        @endforeach
+                    </select>
+                      <h1>Agenda KBM</h1>
+            		      <input type="text" name="agenda_kbm" placeholder="agenda kbm" class="input input-bordered w-full max-w-xs bg-white" />
+                	<div class="card-actions justify-end">
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 
