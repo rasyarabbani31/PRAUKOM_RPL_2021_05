@@ -46,7 +46,7 @@
   <!-- BUAT KOMPUTER -->
   <div class="navbar-center hidden lg:flex z-10">
     <ul class="menu menu-horizontal p-0">
-    <li><a class="rounded-xl text-lg  text-black" href="/dashboard">DASHBOARD</a></li>
+    <li><a class="rounded-lg  text-black" href="/dashboard">DASHBOARD</a></li>
       <li tabindex="0">
         <a class="rounded-lg text-black" href="/presensisiswa">PRESENSI SISWA</a>
       </li>
@@ -57,13 +57,13 @@
         <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/guru">DAFTAR GURU</a>
+        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
+        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
       </li>
       <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
       </li>
     </ul>
     </div>

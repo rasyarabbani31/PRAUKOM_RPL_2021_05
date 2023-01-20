@@ -75,10 +75,15 @@ class SiswaController extends Controller
         return redirect('siswa');
     }
 
-    public function destroysiswa($id)
+    public function destroysiswa($id = null)
     {
-        Siswa::where('id', $id)->delete();
-        
-        return back();
+      
+        $hapus = DB::table('siswa')
+            ->where('id',$id)
+            ->delete();
+        if($hapus) {
+            return redirect('siswa');
+        }
+       
     }
 }

@@ -239,7 +239,7 @@
                         @endforeach
                     </select>
                     @error('kode_keterangan')
-                                    <p class="text-red-700">Maaf, Data Keterangan Tidak Ada</p>
+                        <p class="text-red-700">Maaf, Data Keterangan Tidak Ada</p>
                     @enderror
 
                       <h1>Agenda KBM</h1>
