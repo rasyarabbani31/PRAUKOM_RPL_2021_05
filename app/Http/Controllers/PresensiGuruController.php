@@ -10,7 +10,7 @@ class PresensiGuruController extends Controller
 {
     public function index2()
     {
-        //$presensi_gurus = PresensiGuru::orderBy('tanggal', 'desc')->get();
+        //$presensi_gurus = PresensiGuru::orderBy('tanggal', 'desc')->get(); aaa aaaa
         $guru = DB::table('presensi_guru')
             ->join('guru','presensi_guru.kode_guru','=','guru.id')
             ->join('keterangan_izin', 'presensi_guru.kode_keterangan', '=', 'keterangan_izin.id')
