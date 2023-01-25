@@ -30,7 +30,7 @@ class SiswaController extends Controller
         // dd($kelas2);
         $jurusan2 = DB::table('jurusan') ->get();
 
-        return view('siswa.create1', compact('kelas2', 'siswa2', 'jurusan2'));
+        return view('siswa.create1', compact('kelas2', 'jurusan2'));
     }
 
     public function storesiswa(Request $request)
