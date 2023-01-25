@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('siswa', function (Blueprint $table) {
             $table->id();
             $table->string('nama_siswa');
-            $table->string('jk_siswa');
+            $table->enum('jk_siswa', ["Laki-Laki", "Perempuan"]);
             $table->unsignedBigInteger('kode_kelas'); //foreign key
             $table->unsignedBigInteger('kode_jurusan'); //fk
 

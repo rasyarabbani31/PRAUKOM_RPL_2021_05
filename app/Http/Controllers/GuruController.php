@@ -28,7 +28,6 @@ class GuruController extends Controller
         'nama_guru' => $request->nama_guru,
         'jk_guru' => $request->jk_guru
         ]);
-
         return redirect('guru');
     }
 

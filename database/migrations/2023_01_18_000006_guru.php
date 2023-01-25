@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('guru', function (Blueprint $table) {
             $table->id(); //pk+ai
             $table->string('nama_guru', 255);
-            $table->string('jk_guru', 10);
+            $table->enum('jk_guru', ["Laki-Laki", "Perempuan"]);
             $table->timestamps();
         });
     }

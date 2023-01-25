@@ -16,26 +16,18 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
       <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-green-600 rounded-box w-52">
-        <li><a href="/dashboard" class="text-black">DASHBOARD</a></li>
-        <li tabindex="0">
-          <a class="rounded-lg text-black" href="/presensisiswa">PRESENSI SISWA</a>
-        </li>
-        <li tabindex="0">
-          <a class="rounded-lg text-black" href="/presensiguru">PRESENSI GURU</a>
-        </li>
-        <li tabindex="0" class="text-black">
-          <a class="rounded-lg" href="/siswa">DAFTAR SISWA</a>
-        </li>
-        <li>
-          <a href="/guru" class="text-black">DAFTAR GURU</a>
-        </li>
-        <li>
-        <a class="rounded-xl text-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
-      </li>
-      <li>
-        <a class="rounded-xl text-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
-      </li>
-      </ul>
+        <li><a href="/dashboard" class="rounded-lg  text-black font-medium">DASHBOARD</a></li>
+          <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div class="collapse-title text-xl font-medium">
+                PRESENSI
+            </div>
+            <li tabindex="0">
+              <a class="rounded-lg text-black" href="/presensisiswa">SISWA</a>
+            </li>
+            <li tabindex="0">
+              <a class="rounded-lg text-black" href="/presensiguru">GURU</a>
+            </li>
+          </div>
     </div>
     <a class="btn btn-ghost normal-case text-xl text-black" href="/about">ALINGGAM</a>
   </div>
@@ -46,24 +38,37 @@
   <!-- BUAT KOMPUTER -->
   <div class="navbar-center hidden lg:flex z-10">
     <ul class="menu menu-horizontal p-0">
-    <li><a class="rounded-xl text-lg  text-black" href="/dashboard">DASHBOARD</a></li>
-      <li tabindex="0">
-        <a class="rounded-lg text-black" href="/presensisiswa">PRESENSI SISWA</a>
-      </li>
-      <li tabindex="0">
-        <a class="rounded-lg text-black" href="/presensiguru">PRESENSI GURU</a>
-      </li>
-      <li tabindex="0">
-        <a class="rounded-lg text-black" href="/siswa">DAFTAR SISWA</a>
-      </li>
+    <li><a class="rounded-lg  text-black font-medium" href="/dashboard">DASHBOARD</a></li>
+    <div class="dropdown dropdown-bottom">
+      <label tabindex="0" class="btn m-1 text-black bg-green-600">PRESENSI</label>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow rounded-box w-52 bg-green-400">
+            <li tabindex="0">
+              <a class="rounded-lg text-black" href="/presensisiswa">SISWA</a>
+            </li>
+            <li tabindex="0">
+              <a class="rounded-lg text-black" href="/presensiguru">GURU</a>
+            </li>
+        </ul>
+    </div>
+    <div class="dropdown">
+      <label tabindex="0" class="btn m-1 text-black bg-green-600">LIST INFO</label>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-green-100 rounded-box w-52">
+          <li tabindex="0">
+            <a class="rounded-lg text-black" href="/siswa">SISWA</a>
+          </li>
+          <li>
+            <a class="rounded-lg  text-black" href="/guru">GURU</a>
+          </li>
+          <li>
+            <a class="rounded-lg  text-black" href="/tingkatan">TINGKATAN</a>
+          </li>
+          <li>
+            <a class="rounded-lg  text-black" href="/jurusan">JURUSAN</a>
+          </li>
+        </ul>
+      </div>
       <li>
-        <a class="rounded-lg  text-black" href="/guru">DAFTAR GURU</a>
-      </li>
-      <li>
-        <a class="rounded-lg  text-black" href="/tingkatan">DAFTAR TINGKATAN</a>
-      </li>
-      <li>
-        <a class="rounded-lg  text-black" href="/jurusan">DAFTAR JURUSAN</a>
+            <a class="rounded-lg  text-black font-medium" href="">HISTORI</a>
       </li>
     </ul>
     </div>
@@ -198,12 +203,17 @@
         <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
             @csrf
             <div class="card-body">
+            <p class="text-center text-black">BUAT GURU</p>
 		          <form action='/guru' method='post'>
                   @csrf
                       <h1 class="text-black">Nama</h1>
-                    	<input type="text" name="nama_guru" placeholder="Nama Guru" class="input input-bordered w-full max-w-xs bg-white" required/>
+                    	<input type="text" name="nama_guru" placeholder="Nama Guru" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
                       <h1 class="text-black">Jenis Kelamin</h1>
-            		      <input type="text" name="jk_guru" placeholder="Jk Guru" class="input input-bordered w-full max-w-xs bg-white" required/>
+                      <select class="select select-bordered w-full max-w-xs bg-white text-black" name="jk_guru" required>
+                        <option disabled selected>-- Pilih JK --</option>
+                          <option value="Laki-Laki">Laki-Laki</option>
+                          <option value="Perempuan">Perempuan</option>
+                        </select>
                 	<div class="card-actions justify-end">
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
