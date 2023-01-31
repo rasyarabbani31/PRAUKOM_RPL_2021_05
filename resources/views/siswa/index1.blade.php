@@ -205,15 +205,29 @@
         <p class="text-black text-center font-medium">DAFTAR SISWA</P>
           <table class="table w-full text-primary-content">
             <thead>
-              <div class="card-actions justify-end">
+            <div class="card-actions justify-end">
                     		<a class="btn bg-primary text-white" href="/siswa/create">TAMBAH</a>
               </div>
+
+            <form action="/siswa/search" method="GET">
+            @csrf
+              <div class="form-control">
+              <div class="input-group">
+                <input type="search" placeholder="Cari Siswa" name="katakunci" class="input input-bordered" value="{{ Request::get('katakunci') }}" aria-label="Search" />
+                  <button class="btn btn-square" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                  </button>
+              </div>
+            </div>
+            </form>
+              
               <tr class="space-x-4 text-white text-center">
                   <th>NO</th>
                   <th>Nama</th>
                   <th>Jenis Kelamin</th>
                   <th>Kelas</th>
                   <th>Jurusan</th>
+                  <th>NISN</th>
                   <th></th>
                   <th></th>
               </tr>
@@ -226,6 +240,7 @@
                   <td class="text-center">{{ $siswa->jk_siswa }}</td>
                   <td class="text-center">{{ $siswa->tingkatan }}</td>
                   <td class="text-center">{{ $siswa->nama_jurusan }}</td>
+                  <td class="text-center">{{ $siswa->nisn }}</td>
                   <td><a class="btn btn-sm bg-yellow-400 text-black" href="/siswa/{{ $siswa->id }}/edit">EDIT</a></td>
                   <td>
                         <form action="/siswa/{{ $siswa->id }}" method="post">

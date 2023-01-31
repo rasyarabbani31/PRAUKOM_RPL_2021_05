@@ -245,7 +245,9 @@
                       @error('kode_jurusan')
                                     <p class="text-red-700">Maaf, Data Jurusan Tidak Ada</p>
                     @enderror
-                    
+                    <h1>NISN</h1>
+                    	<input type="number" name="nisn" placeholder="Nisn" class="input input-bordered w-full max-w-xs bg-white" required/>
+
                 	<div class="card-actions justify-end">
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>

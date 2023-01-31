@@ -217,6 +217,8 @@
                           <option value="Laki-Laki">Laki-Laki</option>
                           <option value="Perempuan">Perempuan</option>
                         </select>
+                        <h1>NIP</h1>
+                    	<input type="number" name="nip" value="{{ $guru->nip }}" placeholder="Nama Guru" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
                 	<div class="card-actions justify-end">
                         <button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>

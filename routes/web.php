@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', [DashboardController::class, 'index01']);
 
 Route::get('presensisiswa', [PresensiSiswaController::class, 'index3']);
+Route::get('presensisiswa/search', [PresensiSiswaController::class, 'searchpresensisiswa']);
 Route::get('presensisiswa/create', [PresensiSiswaController::class, 'createpresensisiswa']);
 Route::post('presensisiswa', [PresensiSiswaController::class, 'storepresensisiswa']);
 Route::get('presensisiswa/{id}/edit', [PresensiSiswaController::class, 'editpresensisiswa']);
@@ -38,6 +39,7 @@ Route::put('presensiguru/{id}', [PresensiGuruController::class, 'updatepresensig
 Route::delete('presensiguru/{id}', [PresensiGuruController::class, 'destroypresensiguru']);
 
 Route::get('guru', [GuruController::class, 'index']);
+Route::get('guru/search', [GuruController::class, 'searchguru']);
 Route::get('guru/create', [GuruController::class, 'createguru']);
 Route::post('guru', [GuruController::class, 'storeguru']);
 Route::get('guru/{id}/edit', [GuruController::class, 'editguru']);
@@ -45,6 +47,7 @@ Route::put('guru/{id}', [GuruController::class, 'updateguru']);
 Route::delete('guru/{id}', [GuruController::class, 'destroyguru']);
 
 Route::get('siswa', [SiswaController::class, 'index1']);
+Route::get('siswa/search', [SiswaController::class, 'searchsiswa']);
 Route::get('siswa/create', [SiswaController::class, 'createsiswa']);
 Route::post('siswa', [SiswaController::class, 'storesiswa']);
 Route::get('siswa/{id}/edit', [SiswaController::class, 'editsiswa']);

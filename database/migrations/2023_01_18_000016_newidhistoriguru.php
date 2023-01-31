@@ -14,9 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        DB::unprepared("DROP FUNCTION IF EXISTS newIdHistori");
+        DB::unprepared("DROP FUNCTION IF EXISTS newIdHistoriGuru");
         DB::unprepared("
-            CREATE FUNCTION newIdHistori()
+            CREATE FUNCTION newIdHistoriGuru()
             RETURNS CHAR(7)
             BEGIN
             DECLARE kode_lama CHAR(7);
@@ -25,12 +25,12 @@ return new class extends Migration
             DECLARE angka_baru CHAR(7);
             DECLARE jumlah INT;
 
-            SELECT COUNT(id_histori) INTO jumlah FROM histori;
+            SELECT COUNT(id_histori) INTO jumlah FROM histori_guru;
 
             IF(jumlah = 0) THEN
-                SET kode_baru = concat('HTR', 0, 0, 0, 1);
+                SET kode_baru = concat('HTRG', 0, 0, 1);
             ELSE
-                SELECT MAX(id_histori) INTO kode_lama FROM histori;
+                SELECT MAX(id_histori) INTO kode_lama FROM histori_guru;
                 SET ambil_angka = SUBSTR(kode_lama, 4, 3) + 1;
                 SET angka_baru = LPAD(ambil_angka, 3, 0);
                 SET kode_lama = SUBSTR(kode_lama, 1, 3);
@@ -49,6 +49,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('newIdHistori');
+        //
     }
 };

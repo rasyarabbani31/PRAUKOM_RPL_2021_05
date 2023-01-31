@@ -10,7 +10,6 @@ class SiswaController extends Controller
 {
     public function index1()
     {
-        //$siswas = Siswa::orderBy('kode_kelas', 'asc') ->get();
         $siswas = DB::table('siswa')
                 ->join('kelas', 'siswa.kode_kelas', '=', 'kelas.id')
                 ->join('jurusan', 'siswa.kode_jurusan', '=', 'jurusan.id')
@@ -21,6 +20,40 @@ class SiswaController extends Controller
                 ->get();
                 
         return view ('siswa.index1', compact('siswas'));
+
+    }
+    public function searchsiswa(Request $request)
+    {
+        //$siswas = Siswa::orderBy('kode_kelas', 'asc') ->get();
+        $katakunci = $request->katakunci;
+        $siswas = DB::table('siswa')
+                ->join('kelas', 'siswa.kode_kelas', '=', 'kelas.id')
+                ->join('jurusan', 'siswa.kode_jurusan', '=', 'jurusan.id')
+                ->select('kelas.*', 'jurusan.*', 'siswa.*')
+                ->where('nama_siswa','like',"%$katakunci%")
+                ->orWhere('jk_siswa','like',"%$katakunci%")
+                ->orWhere('kelas.tingkatan','like',"%$katakunci%")
+                ->orWhere('jurusan.nama_jurusan','like',"%$katakunci%")
+                ->orWhere('nisn','like',"%$katakunci%")
+                ->orderBy('tingkatan','asc')
+                ->orderBy('nama_jurusan','asc')
+                ->orderBy('nama_siswa','asc')
+                ->get();
+
+                // $jumlahbaris = 5;
+                // if(strlen($katakunci)){
+                //     $data = Siswa::where('nama_siswa','like',"%$katakunci%")
+                //     ->orWhere('jk_siswa','like',"%$katakunci%")
+                //     ->orWhere('nisn','like',"%$katakunci%")
+                //     ->paginate(5);
+        
+                // }else{
+                //     $data = Siswa::orderBy('id', 'asc')->paginate(5);
+                // }
+        
+        // return view ('siswa.index1', compact('siswas'))->with('siswa', $data);
+        return view ('siswa.index1', compact('siswas'));
+
     }
 
     public function createsiswa()
@@ -44,7 +77,8 @@ class SiswaController extends Controller
         'nama_siswa' => $request->nama_siswa,
         'jk_siswa' => $request->jk_siswa,
         'kode_kelas' => $request->kode_kelas,
-        'kode_jurusan' => $request->kode_jurusan
+        'kode_jurusan' => $request->kode_jurusan,
+        'nisn' => $request->nisn
         ]);
 
         return redirect('siswa');
@@ -70,7 +104,8 @@ class SiswaController extends Controller
             'nama_siswa' => $request->nama_siswa, 
             'jk_siswa' => $request->jk_siswa, 
             'kode_kelas' => $request->kode_kelas,
-            'kode_jurusan' => $request->kode_jurusan
+            'kode_jurusan' => $request->kode_jurusan,
+            'nisn' => $request->nisn
         ]);
 
         return redirect('siswa');

@@ -25,6 +25,31 @@ class PresensiSiswaController extends Controller
         
         return view('presensisiswa.index3', compact('siswa') );
     }
+    
+    public function searchpresensisiswa(Request $request)
+    {
+        //$siswas = Siswa::orderBy('kode_kelas', 'asc') ->get();
+        $katakunci = $request->katakunci;
+        $siswa = DB::table('presensi_siswa')
+        ->join('siswa','presensi_siswa.kode_siswa','=','siswa.id')
+        ->join('kelas', 'presensi_siswa.kode_kelas','=','kelas.id')
+        ->join('jurusan','presensi_siswa.kode_jurusan','=','jurusan.id')
+        ->join('keterangan_izin', 'presensi_siswa.kode_keterangan', '=', 'keterangan_izin.id')
+        ->select('siswa.*', 'kelas.*', 'jurusan.*', 'keterangan_izin.*','presensi_siswa.*')
+        ->where('tanggal','like',"%$katakunci%")
+        ->orWhere('nama_siswa','like',"%$katakunci%")
+        ->orWhere('kelas.tingkatan','like',"%$katakunci%")
+        ->orWhere('jurusan.nama_jurusan','like',"%$katakunci%")
+        ->orWhere('keterangan_izin.keterangan','like',"%$katakunci%")
+        ->orderBy('tanggal', 'desc')
+        ->orderBy('tingkatan','asc')
+        ->orderBy('nama_jurusan','asc')
+        ->orderBy('nama_siswa','asc')
+        ->get();
+
+        return view ('presensisiswa.index3', compact('siswa'));
+
+    }
 
     public function createpresensisiswa()
 

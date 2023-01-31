@@ -15,6 +15,22 @@ class GuruController extends Controller
         return view('guru.index', compact('gurus') );
     }
 
+    public function searchguru(Request $request)
+    {
+
+        $katakunci = $request->katakunci;
+        $gurus = DB::table('guru')
+                ->select('id', 'nama_guru', 'jk_guru', 'nip')
+                ->where('nama_guru','like',"%$katakunci%")
+                ->orWhere('jk_guru','like',"%$katakunci%")
+                ->orWhere('nip','like',"%$katakunci%")
+                ->orderBy('nama_guru','asc')
+                ->get();
+
+        return view ('guru.index', compact('gurus'));
+
+    }
+
     public function createguru()
 
     {
@@ -26,8 +42,10 @@ class GuruController extends Controller
 
         Guru::insert([
         'nama_guru' => $request->nama_guru,
-        'jk_guru' => $request->jk_guru
+        'jk_guru' => $request->jk_guru,
+        'nip' => $request->nip
         ]);
+
         return redirect('guru');
     }
 

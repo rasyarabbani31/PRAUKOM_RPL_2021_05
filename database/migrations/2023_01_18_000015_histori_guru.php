@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('histori', function (Blueprint $table) {
+        Schema::create('histori_guru', function (Blueprint $table) {
             $table->char('id_histori',7)->primary(); 
-            $table->string('nama_siswa');
+            $table->string('nama_guru');
             $table->string('aktivitas');
             $table->date('tgl');
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('histori');
+        //
     }
 };
