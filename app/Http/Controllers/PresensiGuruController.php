@@ -83,6 +83,8 @@ class PresensiGuruController extends Controller
 
     public function updatepresensiguru(Request $request, $id)
     {   
+        $image = $request->file('image')->store('gambarpresensiguru');
+        
         $request->validate([
             'kode_guru' => 'required',
             'kode_keterangan' => 'required'
@@ -92,7 +94,8 @@ class PresensiGuruController extends Controller
         'tanggal' => $request->tanggal,
         'kode_guru' => $request->kode_guru,
         'kode_keterangan' => $request->kode_keterangan,
-        'agenda_kbm' => $request->agenda_kbm
+        'agenda_kbm' => $request->agenda_kbm,
+        'gambar' => $image
         ]);
 
         return redirect('presensiguru');

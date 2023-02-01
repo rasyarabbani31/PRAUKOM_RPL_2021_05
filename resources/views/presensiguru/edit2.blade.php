@@ -51,7 +51,7 @@
     </div>
     <div class="dropdown">
       <label tabindex="0" class="btn m-1 text-black bg-green-600">LIST INFO</label>
-        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-green-100 rounded-box w-52">
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-green-400 rounded-box w-52">
           <li tabindex="0">
             <a class="rounded-lg text-black" href="/siswa">SISWA</a>
           </li>
@@ -89,7 +89,7 @@
         <div class="card w-96 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
           <div class="card-body text-black">
           <p class="text-center">EDIT PRESENSI GURU</p>
-                  <form action="/presensiguru/{{ $presensiguru->id }}" method="post">
+                  <form action="/presensiguru/{{ $presensiguru->id }}" method="post" enctype="multipart/form-data">
 
                   @method('PUT')
                   
@@ -189,5 +189,7 @@
   </div>
 </div>
 
+
+<script src="{{ asset('js/index.js') }}"> </script>
 </body>
 </html>
