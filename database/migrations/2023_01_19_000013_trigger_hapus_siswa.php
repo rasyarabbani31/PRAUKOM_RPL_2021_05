@@ -25,11 +25,11 @@ return new class extends Migration
              DECLARE adder VARCHAR(30);
              DECLARE kode CHAR(7);
 
-             SELECT newIdHistori() INTO kode;
+             SELECT newIdHistoriSiswa() INTO kode;
              SELECT siswa.nama_siswa INTO adder FROM siswa WHERE siswa.id = old.id;
 
-            INSERT INTO histori (id_histori,nama_siswa,aktivitas,tgl) VALUES (
-                kode,old.nama_siswa,'hapus siswa',NOW()
+            INSERT INTO histori_siswa (id_histori,nama_siswa,nisn,aktivitas,tgl) VALUES (
+                kode,old.nama_siswa,old.nisn,'Siswa Keluar',NOW()
             );
              
              END;  

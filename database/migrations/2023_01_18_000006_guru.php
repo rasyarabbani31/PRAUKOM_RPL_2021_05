@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id(); //pk+ai
             $table->string('nama_guru', 255);
             $table->enum('jk_guru', ["Laki-Laki", "Perempuan"]);
-            $table->char('nip');
+            $table->char('nip', 20);
             $table->timestamps();
         });
     }

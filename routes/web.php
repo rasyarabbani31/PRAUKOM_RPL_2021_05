@@ -8,6 +8,8 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TingkatanController;
 use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\HistoriSiswaController;
+use App\Http\Controllers\HistoriGuruController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,3 +69,11 @@ Route::post('jurusan', [JurusanController::class, 'storejurusan']);
 Route::get('jurusan/{id}/edit', [JurusanController::class, 'editjurusan']);
 Route::put('jurusan/{id}', [JurusanController::class, 'updatejurusan']);
 Route::delete('jurusan/{id}', [JurusanController::class, 'destroyjurusan']);
+
+
+Route::get('historisiswa', [HistoriSiswaController::class, 'historisiswa']);
+Route::delete('historisiswa/{id}', [HistoriSiswaController::class, 'destroyhistorisiswa']);
+
+
+Route::get('historiguru', [HistoriguruController::class, 'historiguru']);
+Route::delete('historiguru/{id}', [HistoriguruController::class, 'destroyhistoriguru']);

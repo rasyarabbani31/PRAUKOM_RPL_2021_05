@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('histori_guru', function (Blueprint $table) {
             $table->char('id_histori',7)->primary(); 
             $table->string('nama_guru');
+            $table->char('nip', 20);
             $table->string('aktivitas');
             $table->date('tgl');
         });

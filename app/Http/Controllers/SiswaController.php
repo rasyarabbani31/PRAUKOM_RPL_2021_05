@@ -24,7 +24,6 @@ class SiswaController extends Controller
     }
     public function searchsiswa(Request $request)
     {
-        //$siswas = Siswa::orderBy('kode_kelas', 'asc') ->get();
         $katakunci = $request->katakunci;
         $siswas = DB::table('siswa')
                 ->join('kelas', 'siswa.kode_kelas', '=', 'kelas.id')
@@ -39,19 +38,7 @@ class SiswaController extends Controller
                 ->orderBy('nama_jurusan','asc')
                 ->orderBy('nama_siswa','asc')
                 ->get();
-
-                // $jumlahbaris = 5;
-                // if(strlen($katakunci)){
-                //     $data = Siswa::where('nama_siswa','like',"%$katakunci%")
-                //     ->orWhere('jk_siswa','like',"%$katakunci%")
-                //     ->orWhere('nisn','like',"%$katakunci%")
-                //     ->paginate(5);
-        
-                // }else{
-                //     $data = Siswa::orderBy('id', 'asc')->paginate(5);
-                // }
-        
-        // return view ('siswa.index1', compact('siswas'))->with('siswa', $data);
+                
         return view ('siswa.index1', compact('siswas'));
 
     }
@@ -69,6 +56,8 @@ class SiswaController extends Controller
     public function storesiswa(Request $request)
     {
         $request->validate([
+            'nisn'=>'required|max:10',
+            'jk_siswa' => 'required',
             'kode_kelas'=>'required',
             'kode_jurusan'=>'required'
         ]);
@@ -96,6 +85,8 @@ class SiswaController extends Controller
     public function updatesiswa(Request $request, $id)
     {   
         $request->validate([
+            'nisn'=>'required|max:10',
+            'jk_siswa' => 'required',
             'kode_kelas'=>'required',
             'kode_jurusan'=>'required'
         ]);

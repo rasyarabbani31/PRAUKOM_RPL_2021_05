@@ -34,8 +34,7 @@
 
 
 
-  
-  <!-- BUAT KOMPUTER -->
+    <!-- BUAT KOMPUTER -->
   <div class="navbar-center hidden lg:flex z-10">
     <ul class="menu menu-horizontal p-0">
     <li><a class="rounded-lg  text-black font-medium" href="/dashboard">DASHBOARD</a></li>
@@ -67,9 +66,17 @@
           </li>
         </ul>
       </div>
-      <li>
-            <a class="rounded-lg  text-black font-medium" href="">HISTORI</a>
-      </li>
+      <div class="dropdown dropdown-bottom">
+      <label tabindex="0" class="btn m-1 text-black bg-green-600">HISTORI HAPUS</label>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow rounded-box w-52 bg-green-400">
+            <li tabindex="0">
+              <a class="rounded-lg text-black" href="/historisiswa">SISWA</a>
+            </li>
+            <li tabindex="0">
+              <a class="rounded-lg text-black" href="/historiguru">GURU</a>
+            </li>
+        </ul>
+    </div>
     </ul>
     </div>
     <div class="navbar-end">
@@ -78,126 +85,6 @@
   </div>
 </div>
 
-
-
-<!-- <div class="navbar  bg-primary">
-  <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl text-white" href="/about">ALINGGAM</a>
-  </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal p-0">
-      <li><a class="rounded-xl text-lg  text-white" href="/dashboard">DASHBOARD</a></li>
-      <li tabindex="0">
-        <a class="rounded-xl text-white">
-          PRESENSI
-          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-        </a>
-          <ul class="p-2 bg-green-100 rounded-lg">
-            <div class="dropdown dropdown-left">
-                <label tabindex="0" class="btn m-1 bg-primary">MURID</label>
-              </div>
-              <div class="dropdown dropdown-left">
-                <label tabindex="0" class="btn m-1 bg-primary">GURU</label>
-              </div>
-          </ul>  
-      </li>
-      <li tabindex="0">
-        <a class="rounded-xl text-white">
-          KELAS
-          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-        </a>
-        <ul class="p-2 bg-green-100 rounded-lg">
-          <div class="dropdown dropdown-left">
-            <label tabindex="0" class="btn m-1 bg-primary">X</label>
-                 <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-green-100 rounded-box w-52">
-                    <li><a href="/xrpl">RPL</a></li>
-                    <li><a href="/xmm">MM</a></li>
-                    <li><a href="/xtkj">TKJ</a></li>
-                    <li><a href="/xak">AK</a></li>
-                    <li><a href="/xbb">BB</a></li>
-                    <li><a href="/xtp">TP</a></li>
-                    <li><a href="/xtpl">TPL</a></li>
-                    <li><a href="/xtkr">TKR</a></li>
-                </ul>
-          </div>
-          <div class="dropdown dropdown-left">
-            <label tabindex="0" class="btn m-1 bg-primary">XI</label>
-                 <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-green-100 rounded-box w-52">
-                    <li><a href="/xirpl">RPL</a></li>
-                    <li><a href="/ximm">MM</a></li>
-                    <li><a href="/xitkj">TKJ</a></li>
-                    <li><a href="/xiak">AK</a></li>
-                    <li><a href="/xibb">BB</a></li>
-                    <li><a href="/xitp">TP</a></li>
-                    <li><a href="/xitpl">TPL</a></li>
-                    <li><a href="/xitkr">TKR</a></li>
-                </ul>
-          </div> 
-          <div class="dropdown dropdown-left">
-            <label tabindex="0" class="btn m-1 bg-primary">XII</label>
-                 <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-green-100 rounded-box w-52">
-                    <li><a href="/xiirpl">RPL</a></li>
-                    <li><a href="/xiimm">MM</a></li>
-                    <li><a href="/xiitkj">TKJ</a></li>
-                    <li><a href="/xiiak">AK</a></li>
-                    <li><a href="/xiibb">BB</a></li>
-                    <li><a href="/xiitp">TP</a></li>
-                    <li><a href="/xiitpl">TPL</a></li>
-                    <li><a href="/xiitkr">TKR</a></li>
-                </ul>
-          </div>        
-        </ul>
-      </li>
-      <li><a class="rounded-xl text-lg  text-white" href="/guru">GURU</a></li>
-    </ul>
-    
-  </div>
-</div> -->
-
-<!-- <div class="w-1/2 mx-auto">
-  <div class="lg:flex gap-5 mx-auto mt-56">
-          <div class="basis-1/2">
-              <div class="card w-96 bg-primary text-primary-content mb-5">
-                <div class="card-body">
-                  <h2 class="card-title">Card title 1</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card w-96 bg-primary text-primary-content mb-5">
-                <div class="card-body">
-                  <h2 class="card-title">Card title 2</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="basis-1/2">
-              <div class="card w-96 bg-primary text-primary-content mb-5">
-                <div class="card-body">
-                  <h2 class="card-title">Card title 1</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="card w-96 bg-primary text-primary-content mb-5">
-                <div class="card-body">
-                  <h2 class="card-title">Card title 2</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-          </div>
-   </div>
-</div> -->
 
         <div class="card w-96 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
           <div class="card-body text-black">

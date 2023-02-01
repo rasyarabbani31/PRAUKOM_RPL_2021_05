@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_siswa');
             $table->enum('jk_siswa', ["Laki-Laki", "Perempuan"]);
-            $table->char('nisn');
+            $table->char('nisn', 10);
             $table->unsignedBigInteger('kode_kelas'); //foreign key
             $table->unsignedBigInteger('kode_jurusan'); //fk
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TINGKATAN</title>
+  <title>HISTORI SISWA</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -88,32 +88,26 @@
         <div class="card w-1/2 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
       <div class="card-body">
         <div class="overflow-x-auto shadow-xl text-primary-content">
-        <p class="text-black text-center font-medium">DAFTAR TINGKATAN</P>
+        <p class="text-black text-center font-medium text-xl">Histori Hapus Siswa</P>
+        <br>
           <table class="table w-full text-primary-content">
             <thead>
-              <div class="card-actions justify-end">
-                    		<a class="btn bg-primary text-white" href="/tingkatan/create">TAMBAH</a>
-              </div>
               <tr class="space-x-4 text-white text-center">
                   <th>NO</th>
-                  <th>Tingkatan</th>
-                  <th></th>
-                  <th></th>
+                  <th>Nama Siswa</th>
+                  <th>NISN</th>
+                  <th>Aktivitas</th>
+                  <th>Tanggal</th>
               </tr>
             </thead>
             <tbody>
-                @foreach($tingkatans as $tingkatan)
+                @foreach($hs as $a)
                 <tr class="text-white text-center">
                   <th>{{ $loop->iteration }}</th>
-                  <td class="text-center">{{ $tingkatan->tingkatan }}</td>
-                  <td><a class="btn btn-sm bg-yellow-400 text-black" href="/tingkatan/{{ $tingkatan->id }}/edit">EDIT</a></td>
-                  <td>
-                        <form action="/tingkatan/{{ $tingkatan->id }}" method="post">
-                            @csrf
-                            @method("delete")
-                            <button class="btn btn-sm bg-red-400 text-black" type="submit">DELETE</button>
-                        </form>
-                  </td>
+                  <td class="text-center">{{ $a->nama_siswa}}</td>
+                  <td class="text-center">{{ $a->nisn}}</td>
+                  <td class="text-center">{{ $a->aktivitas}}</td>
+                  <td class="text-center">{{ $a->tgl}}</td>
                 </tr>
                 @endforeach
             </tbody>
