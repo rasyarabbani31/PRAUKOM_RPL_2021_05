@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('kode_guru'); //fk
             $table->unsignedBigInteger('kode_keterangan'); //fk
             $table->string('agenda_kbm', 255);
+            $table->string('gambar');
             $table->timestamps();
 
             //fk dari guru

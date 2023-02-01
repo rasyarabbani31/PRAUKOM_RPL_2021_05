@@ -96,7 +96,7 @@
                     		<a class="btn bg-primary text-white" href="/presensisiswa/create">TAMBAH</a>
               </div>
 
-              <form action="/siswa/search" method="GET">
+              <form action="/presensisiswa/search" method="GET">
             @csrf
               <div class="form-control">
               <div class="input-group">
@@ -115,6 +115,7 @@
                   <th>Kelas</th>
                   <th>Jurusan</th>
                   <th>Keterangan Hadir</th>
+                  <th>Bukti Foto</th>
                   <th></th>
                   <th></th>
               </tr>
@@ -128,6 +129,11 @@
                   <td class="text-center">{{ $presensisiswa->tingkatan }}</td>
                   <td class="text-center">{{ $presensisiswa->nama_jurusan }}</td>
                   <td class="text-center">{{ $presensisiswa->keterangan }}</td>
+                  <td class="text-center">
+                    <a href="{{ asset('storage/'.$presensisiswa->gambar) }}" target="_blank" class="group">
+                        <img src="{{ asset('storage/'.$presensisiswa->gambar) }}" class="mx-auto shadow  group-hover:brightness-50 ">
+                    </a>
+                  </td>
                   <td><a class="btn btn-sm text-black bg-yellow-400" href="/presensisiswa/{{ $presensisiswa->id }}/edit">EDIT</a></td>
                   <td>
                         <form action="/presensisiswa/{{ $presensisiswa->id }}" method="post">

@@ -91,7 +91,7 @@
             @csrf
             <div class="card-body text-black">
             <p class="text-center">BUAT PRESENSI GURU</p>
-		          <form action='/presensiguru' method='post'>
+		          <form action='/presensiguru' method='post'  enctype="multipart/form-data">
                   @csrf
                       <h1>Tanggal</h1>
                     	<input type="date" name="tanggal" placeholder="tanggal" class="input input-bordered w-full max-w-xs bg-white" required />
@@ -129,9 +129,22 @@
                         <p class="text-red-700">Maaf, Data Keterangan Tidak Ada</p>
                     @enderror
 
-                      <h1>Agenda KBM</h1>
+                      <label class="label">
+                        <span class="label-text text-black">Agenda KBM</span>
+                      </label>
             		      <input type="text" name="agenda_kbm" placeholder="agenda kbm" class="input input-bordered w-full max-w-xs bg-white" required />
-                	<div class="card-actions justify-end">
+
+                      <label class="label">
+                        <span class="label-text text-black">Bukti Foto</span>
+                      </label>
+                      {{-- <input type="file" name="image" class="file-input file-input-bordered file-input-md w-full max-w-xs" /> --}}
+
+                      <input type="file" name="image" id="image" class="file-input file-input-bordered w-full max-w-xs bg-white" onchange="previewImage()" required/>
+                    <br>
+                    <img src="" class="img-preview object-scale-down w-1/2 md:w-1/4" alt="">
+
+                  <div class="card-actions justify-end">
+                  
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 
@@ -170,5 +183,6 @@
   </div>
 </div>
 
+<script src="{{ asset('js/index.js') }}"> </script>
 </body>
 </html>

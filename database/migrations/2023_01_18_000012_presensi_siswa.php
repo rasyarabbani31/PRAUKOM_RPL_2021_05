@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('kode_kelas'); //foreign key
             $table->unsignedBigInteger('kode_jurusan'); //fk
             $table->unsignedBigInteger('kode_keterangan'); //fk
+            $table->string('gambar');
             $table->timestamps();
 
             //fk dari siswa

@@ -156,6 +156,17 @@
                                     <p class="text-red-700">Maaf, Data Keterangan Tidak Ada</p>
                     @enderror
 
+                    <label class="label">
+                        <span class="label-text text-black">Bukti Foto</span>
+                      </label>
+                  <div class="card-actions justify-end">
+
+                      {{-- <input type="file" name="image" class="file-input file-input-bordered file-input-md w-full max-w-xs" /> --}}
+
+                      <input type="file" name="image" id="image" class="file-input file-input-bordered w-full max-w-xs bg-white" onchange="previewImage()" required/>
+                    <br>
+                    <img src="" class="img-preview object-scale-down w-1/2 md:w-1/4" alt="">
+
 
                 	<div class="card-actions justify-end">
                         <button type='submit' class="btn btn-primary mx-auto">Submit</button>

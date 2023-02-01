@@ -133,11 +133,26 @@
                                     <p class="text-red-700">Maaf, Data Keterangan Tidak Ada</p>
                     @enderror
 
-                      <h1>Agenda KBM</h1>
+                      <label class="label">
+                        <span class="label-text text-black">Agenda KBM</span>
+                      </label>
             		      <input type="text" name="agenda_kbm" value="{{ $presensiguru->agenda_kbm }}" placeholder="agenda_kbm" class="input input-bordered w-full max-w-xs text-black bg-white" required/>
-                	<div class="card-actions justify-end">
-                        <button type='submit' class="btn btn-primary mx-auto text-white">Submit</button>
+                	
+                      <label class="label">
+                        <span class="label-text text-black">Bukti Foto</span>
+                      </label>
+                  <div class="card-actions justify-end">
+
+                      {{-- <input type="file" name="image" class="file-input file-input-bordered file-input-md w-full max-w-xs" /> --}}
+
+                      <input type="file" name="image" id="image" class="file-input file-input-bordered w-full max-w-xs bg-white" onchange="previewImage()" required/>
+                    <br>
+                    <img src="" class="img-preview object-scale-down w-1/2 md:w-1/4" alt="">
+
                 	</div>
+                  <div class="flex justify-center">
+                  <button type='submit' class="btn btn-primary text-white ">Submit</button>
+                  </div>
 		          </form> 
           </div>
         </div>

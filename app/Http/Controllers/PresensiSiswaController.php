@@ -63,7 +63,10 @@ class PresensiSiswaController extends Controller
     }
 
     public function storepresensisiswa(Request $request)
-    {
+    {   
+        
+        $image = $request->file('image')->store('gambarpresensisiswa');
+
         $request->validate([
             'kode_siswa' => 'required',
             'kode_kelas' => 'required',
@@ -76,7 +79,8 @@ class PresensiSiswaController extends Controller
         'kode_siswa' => $request->kode_siswa,
         'kode_kelas' => $request->kode_kelas,
         'kode_jurusan' => $request->kode_jurusan,
-        'kode_keterangan' => $request->kode_keterangan
+        'kode_keterangan' => $request->kode_keterangan,
+        'gambar' => $image
         ]);
 
         return redirect('presensisiswa');

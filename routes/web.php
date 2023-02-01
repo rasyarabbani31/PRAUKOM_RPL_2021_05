@@ -34,6 +34,7 @@ Route::put('presensisiswa/{id}', [PresensiSiswaController::class, 'updatepresens
 Route::delete('presensisiswa/{id}', [PresensiSiswaController::class, 'destroypresensisiswa']);
 
 Route::get('presensiguru', [PresensiGuruController::class, 'index2']);
+Route::get('presensiguru/search', [PresensiGuruController::class, 'searchpresensiguru']);
 Route::get('presensiguru/create', [PresensiGuruController::class, 'createpresensiguru']);
 Route::post('presensiguru', [PresensiGuruController::class, 'storepresensiguru']);
 Route::get('presensiguru/{id}/edit', [PresensiGuruController::class, 'editpresensiguru']);

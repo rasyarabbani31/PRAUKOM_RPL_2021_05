@@ -21,6 +21,28 @@ class PresensiGuruController extends Controller
         return view('presensiguru.index2', compact('guru') );
     }
 
+    public function searchpresensiguru(Request $request)
+    {
+        //$siswas = Siswa::orderBy('kode_kelas', 'asc') ->get();
+        $katakunci = $request->katakunci;
+        $guru = DB::table('presensi_guru')
+        ->join('guru','presensi_guru.kode_guru','=','guru.id')
+        ->join('keterangan_izin', 'presensi_guru.kode_keterangan', '=', 'keterangan_izin.id')
+        ->select('guru.*', 'keterangan_izin.*','presensi_guru.*')
+        ->where('tanggal','like',"%$katakunci%")
+        ->orWhere('guru.nama_guru','like',"%$katakunci%")
+        ->orWhere('keterangan_izin.keterangan','like',"%$katakunci%")
+        ->orWhere('agenda_kbm','like',"%$katakunci%")
+        ->orderBy('tanggal', 'desc')
+        ->orderBy('nama_guru','asc')
+        ->orderBy('keterangan','asc')
+        ->orderBy('agenda_kbm','asc')
+        ->get();
+
+        return view ('presensiguru.index2', compact('guru'));
+
+    }
+
     public function createpresensiguru()
 
     {
@@ -31,7 +53,9 @@ class PresensiGuruController extends Controller
     }
 
     public function storepresensiguru(Request $request)
-    {
+    {   
+        $image = $request->file('image')->store('gambarpresensiguru');
+
         $request->validate([
             'kode_guru' => 'required',
             'kode_keterangan' => 'required'
@@ -41,7 +65,8 @@ class PresensiGuruController extends Controller
         'tanggal' => $request->tanggal,
         'kode_guru' => $request->kode_guru,
         'kode_keterangan' => $request->kode_keterangan,
-        'agenda_kbm' => $request->agenda_kbm
+        'agenda_kbm' => $request->agenda_kbm,
+        'gambar' => $image
         ]);
 
         return redirect('presensiguru');
