@@ -162,8 +162,8 @@
                     <br>
                     <img src="" class="img-preview object-scale-down w-1/2 md:w-1/4" alt="">
 
-                    		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
+                  <button type='submit' class="btn btn-primary mx-auto">Submit</button>
 		          </form> 
             </div>
         </div>
