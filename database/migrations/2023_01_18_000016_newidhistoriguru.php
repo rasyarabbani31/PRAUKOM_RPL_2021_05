@@ -28,7 +28,7 @@ return new class extends Migration
             SELECT COUNT(id_histori) INTO jumlah FROM histori_guru;
 
             IF(jumlah = 0) THEN
-                SET kode_baru = concat('HTRG', 0, 0, 1);
+                SET kode_baru = concat('HTG', 0, 0, 0, 1);
             ELSE
                 SELECT MAX(id_histori) INTO kode_lama FROM histori_guru;
                 SET ambil_angka = SUBSTR(kode_lama, 4, 3) + 1;
