@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class PresensiSiswaController extends Controller
 {
-    public function index3()
+    public function presensisiswa()
     {
         //$presensi_gurus = PresensiGuru::orderBy('tanggal', 'desc')->get();
         $siswa = DB::table('presensi_siswa')

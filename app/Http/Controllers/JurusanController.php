@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class JurusanController extends Controller
 {
-    public function index4() {
+    public function jurusan() {
         $jurusans = Jurusan::get();
         
         return view('jurusan.index4', compact('jurusans') );

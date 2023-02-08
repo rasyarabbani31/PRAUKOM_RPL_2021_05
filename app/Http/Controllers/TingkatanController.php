@@ -8,7 +8,7 @@ use App\Models\Tingkatan;
 
 class TingkatanController extends Controller
 {
-     public function index5() {
+     public function tingkatan() {
         $tingkatans = tingkatan::orderby('tingkatan', 'asc')->get();
 
         return view('tingkatan.index5',  compact('tingkatans'));

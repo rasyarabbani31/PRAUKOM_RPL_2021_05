@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class GuruController extends Controller
 {
-    public function index()
+    public function guru()
     {
         $gurus = Guru::orderBy('nama_guru', 'asc')->get();
         

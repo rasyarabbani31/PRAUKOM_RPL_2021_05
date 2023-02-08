@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
-    public function index1()
+    public function siswa()
     {
         $siswas = DB::table('siswa')
                 ->join('kelas', 'siswa.kode_kelas', '=', 'kelas.id')

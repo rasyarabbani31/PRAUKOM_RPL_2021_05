@@ -94,26 +94,38 @@
                     		<a class="btn bg-blue-400 text-black" href="/jurusan/create">TAMBAH</a>
               </div>
               <tr class="space-x-4 text-white text-center">
-                  <th>NO</th>
-                  <th>Jurusan</th>
-                  <th>Singkatan</th>
-                  <th></th>
-                  <th></th>
+                  <th class="text-white bg-black">NO</th>
+                  <th class="text-white bg-black">Jurusan</th>
+                  <th class="text-white bg-black">Singkatan</th>
+                  <th class="text-white bg-black"></th>
+                  <th class="text-white bg-black"></th>
               </tr>
             </thead>
             <tbody>
                 @foreach($jurusans as $jurusan)
                 <tr class="text-white text-center">
-                  <th>{{ $loop->iteration }}</th>
-                  <td>{{ $jurusan->nama_jurusan }}</td>
-                  <td>{{ $jurusan->singkatan_jurusan }}</td>
-                  <td><a class="btn btn-sm bg-yellow-400 text-black" href="/jurusan/{{ $jurusan->id }}/edit">EDIT</a></td>
-                  <td>
+                  <th class="text-white bg-black">{{ $loop->iteration }}</th>
+                  <td class="text-white bg-black">{{ $jurusan->nama_jurusan }}</td>
+                  <td class="text-white bg-black">{{ $jurusan->singkatan_jurusan }}</td>
+                  <td class="text-white bg-black"><a class="btn btn-sm bg-yellow-400 text-black" href="/jurusan/{{ $jurusan->id }}/edit">EDIT</a></td>
+                  <td class="text-white bg-black">
+                        <!-- The button to open modal -->
+                        <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>
+                        <!-- Put this part before </body> tag -->
+                        <div class="modal" id="my-modal-2">
+                              <div class="modal-box bg-green-600">
+                                  <h3 class="font-bold text-lg text-black">APAKAH ANDA YAKIN MENGHAPUS INI?</h3>
+                                  
+                                <div class="modal-action">
+                                    <a href="" class="btn btn-sm bg-yellow-400 text-black">TIDAK</a>
                         <form action="/jurusan/{{ $jurusan->id }}" method="post">
                             @csrf
                             @method("delete")
-                            <button class="btn btn-sm bg-red-400 text-black" type="submit">DELETE</button>
+                            <button class="btn btn-sm bg-red-400 text-black" type="submit">HAPUS</button>
                         </form>
+                                </div>
+                              </div>
+                        </div>
                   </td>
                 </tr>
                 @endforeach
