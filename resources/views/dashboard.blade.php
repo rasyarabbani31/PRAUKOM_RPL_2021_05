@@ -87,6 +87,40 @@
 </div>
 
 
+@php
+                        $guru =  DB::table('guru')->count('id');
+                        $siswa =  DB::table('siswa')->count('id');
+                        $jurusan =  DB::table('jurusan')->count('id');
+@endphp
+
+
+<div class="card w-96 bg-green-600 shadow-xl">
+  <div class="card-body text-white text-center">
+        <p>{{ $guru }}</p>
+    <div class="card-actions justify-end">
+    </div>
+    <p>JUMLAH GURU</p>
+  </div>
+</div>
+
+<div class="card w-96 bg-green-600 shadow-xl">
+  <div class="card-body text-white text-center">
+        <p>{{ $siswa }}</p>
+    <div class="card-actions justify-end">
+    </div>
+    <p>JUMLAH SISWA</p>
+  </div>
+</div>
+
+<div class="card w-96 bg-green-600 shadow-xl">
+  <div class="card-body text-white text-center">
+        <p>{{ $jurusan }}</p>
+    <div class="card-actions justify-end">
+    </div>
+    <p>JUMLAH JURUSAN</p>
+  </div>
+</div>
+      
 
 <div class="p-16">
   <div class="max-w-4xl mx-auto relative" x-data="{
