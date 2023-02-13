@@ -95,19 +95,19 @@
                     		<a class="btn bg-primary text-white" href="/tingkatan/create">TAMBAH</a>
               </div>
               <tr class="space-x-4 text-white text-center">
-                  <th>NO</th>
-                  <th>Tingkatan</th>
-                  <th></th>
-                  <th></th>
+                  <th class="text-white bg-black">NO</th>
+                  <th class="text-white bg-black">Tingkatan</th>
+                  <th class="text-white bg-black"></th>
+                  <th class="text-white bg-black"></th>
               </tr>
             </thead>
             <tbody>
                 @foreach($tingkatans as $tingkatan)
                 <tr class="text-white text-center">
-                  <th>{{ $loop->iteration }}</th>
-                  <td class="text-center">{{ $tingkatan->tingkatan }}</td>
-                  <td><a class="btn btn-sm bg-yellow-400 text-black" href="/tingkatan/{{ $tingkatan->id }}/edit">EDIT</a></td>
-                  <td>
+                  <th class="text-white bg-black">{{ $loop->iteration }}</th>
+                  <td class="text-center text-white bg-black">{{ $tingkatan->tingkatan }}</td>
+                  <td class="text-white bg-black"><a class="btn btn-sm bg-yellow-400 text-black" href="/tingkatan/{{ $tingkatan->id }}/edit">EDIT</a></td>
+                  <td class="text-white bg-black">
                         <form action="/tingkatan/{{ $tingkatan->id }}" method="post">
                             @csrf
                             @method("delete")

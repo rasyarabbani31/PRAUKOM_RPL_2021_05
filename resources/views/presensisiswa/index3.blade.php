@@ -100,8 +100,8 @@
             @csrf
               <div class="form-control">
               <div class="input-group">
-                <input type="search" placeholder="Cari Presensi Siswa" name="katakunci" class="input input-bordered" value="{{ Request::get('katakunci') }}" aria-label="Search" />
-                  <button class="btn btn-square" type="submit">
+                <input type="search" placeholder="Cari Presensi Siswa" name="katakunci" class="input input-bordered bg-black" value="{{ Request::get('katakunci') }}" aria-label="Search" />
+                  <button class="btn btn-square bg-black" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                   </button>
               </div>
@@ -109,33 +109,33 @@
             </form>
 
               <tr class="space-x-4 text-white text-center">
-                  <th>NO</th>
-                  <th>Tanggal</th>
-                  <th>Siswa</th>
-                  <th>Kelas</th>
-                  <th>Jurusan</th>
-                  <th>Keterangan Hadir</th>
-                  <th>Bukti Foto</th>
-                  <th></th>
-                  <th></th>
+                  <th class="text-white bg-black">NO</th>
+                  <th class="text-white bg-black">Tanggal</th>
+                  <th class="text-white bg-black">Siswa</th>
+                  <th class="text-white bg-black">Kelas</th>
+                  <th class="text-white bg-black">Jurusan</th>
+                  <th class="text-white bg-black">Keterangan Hadir</th>
+                  <th class="text-white bg-black">Bukti Foto</th>
+                  <th class="text-white bg-black"></th>
+                  <th class="text-white bg-black"></th>
               </tr>
             </thead>
             <tbody>
                 @foreach($siswa as $presensisiswa)
                 <tr class="text-white">
-                  <th class="text-center">{{ $loop->iteration }}</th>
-                  <td class="text-center">{{ $presensisiswa->tanggal }}</td>
-                  <td class="text-center">{{ $presensisiswa->nama_siswa }}</td>
-                  <td class="text-center">{{ $presensisiswa->tingkatan }}</td>
-                  <td class="text-center">{{ $presensisiswa->nama_jurusan }}</td>
-                  <td class="text-center">{{ $presensisiswa->keterangan }}</td>
-                  <td class="text-center">
+                  <th class="text-center text-white bg-black">{{ $loop->iteration }}</th>
+                  <td class="text-center text-white bg-black">{{ $presensisiswa->tanggal }}</td>
+                  <td class="text-center text-white bg-black">{{ $presensisiswa->nama_siswa }}</td>
+                  <td class="text-center text-white bg-black">{{ $presensisiswa->tingkatan }}</td>
+                  <td class="text-center text-white bg-black">{{ $presensisiswa->nama_jurusan }}</td>
+                  <td class="text-center text-white bg-black">{{ $presensisiswa->keterangan }}</td>
+                  <td class="text-center text-white bg-black">
                     <a href="{{ asset('storage/'.$presensisiswa->gambar) }}" target="_blank" class="group">
                         <img src="{{ asset('storage/'.$presensisiswa->gambar) }}" class="mx-auto shadow  group-hover:brightness-50 ">
                     </a>
                   </td>
-                  <td><a class="btn btn-sm text-black bg-yellow-400" href="/presensisiswa/{{ $presensisiswa->id }}/edit">EDIT</a></td>
-                  <td>
+                  <td class="text-white bg-black"><a class="btn btn-sm text-black bg-yellow-400" href="/presensisiswa/{{ $presensisiswa->id }}/edit">EDIT</a></td>
+                  <td class="text-white bg-black">
                         <form action="/presensisiswa/{{ $presensisiswa->id }}" method="post">
                             @csrf
                             @method("delete")
