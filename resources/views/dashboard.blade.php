@@ -96,7 +96,7 @@
 
 <div class="card w-96 bg-green-600 shadow-xl">
   <div class="card-body text-white text-center">
-        <p>{{ $guru }}</p>
+        <p class ="text-xl">{{ $guru }}</p>
     <div class="card-actions justify-end">
     </div>
     <p>JUMLAH GURU</p>

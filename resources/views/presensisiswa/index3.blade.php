@@ -136,11 +136,23 @@
                   </td>
                   <td class="text-white bg-black"><a class="btn btn-sm text-black bg-yellow-400" href="/presensisiswa/{{ $presensisiswa->id }}/edit">EDIT</a></td>
                   <td class="text-white bg-black">
+                  <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>
+                        <!-- Put this part before </body> tag -->
+                        <div class="modal" id="my-modal-2">
+                              <div class="modal-box bg-green-600">
+                                  <h3 class="font-bold text-lg text-black">APAKAH ANDA YAKIN MENGHAPUS INI?</h3>
+                                  
+                                <div class="modal-action">
+                                    <a href="" class="btn btn-sm bg-yellow-400 text-black">TIDAK</a>
                         <form action="/presensisiswa/{{ $presensisiswa->id }}" method="post">
                             @csrf
                             @method("delete")
                             <button class="btn btn-sm text-black bg-red-400" type="submit">HAPUS</button>
                         </form>
+                                </div>
+                              </div>
+                        </div>
+                        
                   </td>
                 </tr>
                 @endforeach
