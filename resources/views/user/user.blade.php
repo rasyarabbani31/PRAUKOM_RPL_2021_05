@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DASHBOARD</title>
+  <title>PENGGUNA</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -152,57 +152,73 @@
   </div>
 </div>
 
-
-@php
-                        $guru =  DB::table('guru')->count('id');
-                        $siswa =  DB::table('siswa')->count('id');
-                        $kelas =  DB::table('kelas')->count('id');
-                        $jurusan =  DB::table('jurusan')->count('id');
-@endphp
-
-
-<div class="container mx-auto lg:px-[20rem]">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
-
-            <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p class ="text-xl">{{ $guru }}</p>
-              <div class="card-actions justify-end">
+  <div class="card w-1/2 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
+      <div class="card-body">
+        <div class="overflow-x-auto shadow-xl text-primary-content">
+        <p class="text-black text-center font-medium">DAFTAR PENGGUNA</P>
+          <table class="table w-full text-primary-content">
+            <thead>
+            <div class="card-actions justify-end">
+                    		<a class="btn bg-primary text-white" href="/user/create">TAMBAH</a>
               </div>
-              <p>JUMLAH GURU</p>
-            </div>
-          </div>
 
-          <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p>{{ $siswa }}</p>
-              <div class="card-actions justify-end">
+            <form action="/siswa/search" method="GET">
+            @csrf
+              <div class="form-control">
+              <div class="input-group">
+                <input type="search" placeholder="Cari Pengguna" name="katakunci" class="input input-bordered text-black bg-white " value="{{ Request::get('katakunci') }}" aria-label="Search" />
+                  <button class="btn btn-square bg-black" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                  </button>
               </div>
-              <p>JUMLAH SISWA</p>
             </div>
-          </div>
+            </form>
+              <br>
+              <tr class="space-x-4 text-white text-center">
+                  <th class="text-black bg-white">NO</th>
+                  <th class="text-black bg-white">Username</th>
+                  <th class="text-black bg-white">Password</th>
+                  <th class="text-black bg-white">Level Pengguna</th>
+                  <th class="text-black bg-white"></th>
+                  <th class="text-black bg-white"></th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach($users as $user)
+                <tr class="text-white">
+                  <th class="text-center text-black bg-white">{{ $loop->iteration }}</th>
+                  <td class="text-center text-black bg-white">{{ $user->username }}</td>
+                  <td class="text-center text-black bg-white">{{ $user->password }}</td>
+                  <td class="text-center text-black bg-white">{{ $user->nama_level }}</td>
+                  <td class="text-black bg-white"><a class="btn btn-sm bg-yellow-400 text-black" href="/user/{{ $user->id }}/edit">EDIT</a></td>
+                  <td class="text-black bg-white">
+                    <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>
+                        <!-- Put this part before </body> tag -->
+                        <div class="modal" id="my-modal-2">
+                              <div class="modal-box bg-green-600">
+                                  <h3 class="font-bold text-lg text-black">APAKAH ANDA YAKIN MENGHAPUS INI?</h3>
+                                  <br>
+                                  <p>Data Pengguna akan dihapus dan data tidak dapat dikembalikan</p>
+                                <div class="modal-action">
+                                    <a href="" class="btn btn-sm bg-yellow-400 text-black">TIDAK</a>
+                        <form action="/user/{{ $user->id }}" method="post">
+                            @csrf
+                            @method("delete")
+                            <button class="btn btn-sm bg-red-400 text-black" type="submit">DELETE</button>
+                        </form>
+                                </div>
+                              </div>
+                        </div>
+                  </td>
+                </tr>
+                @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+   </div>
 
-          <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p>{{ $kelas }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH KELAS</p>
-            </div>
-          </div>
 
-          <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p>{{ $jurusan }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH JURUSAN</p>
-            </div>
-          </div>
-
-</div>
-</div>
-      
 
 <div class="p-16">
   <div class="max-w-4xl mx-auto relative" x-data="{
@@ -234,8 +250,6 @@
 
   </div>
 </div>
-
-
 
 </body>
 </html>

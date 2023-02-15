@@ -10,6 +10,8 @@ use App\Http\Controllers\TingkatanController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\HistoriSiswaController;
 use App\Http\Controllers\HistoriGuruController;
+use App\Http\Controllers\LevelUserController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,9 +74,17 @@ Route::put('jurusan/{id}', [JurusanController::class, 'updatejurusan']);
 Route::delete('jurusan/{id}', [JurusanController::class, 'destroyjurusan']);
 
 
+Route::get('user', [UserController::class, 'user']);
+Route::get('user/create', [UserController::class, 'createuser']);
+Route::post('user', [UserController::class, 'storeuser']);
+Route::get('user/{id}/edit', [UserController::class, 'edituser']);
+Route::put('user/{id}', [UserController::class, 'updateuser']);
+Route::delete('user/{id}', [UserController::class, 'destroyuser']);
+
 Route::get('historisiswa', [HistoriSiswaController::class, 'historisiswa']);
-Route::delete('historisiswa/{id}', [HistoriSiswaController::class, 'destroyhistorisiswa']);
 
 
 Route::get('historiguru', [HistoriguruController::class, 'historiguru']);
-Route::delete('historiguru/{id}', [HistoriguruController::class, 'destroyhistoriguru']);
+
+
+Route::get('leveluser', [LevelUserController::class, 'leveluser']);

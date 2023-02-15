@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DASHBOARD</title>
+  <title>PENGGUNA</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -152,58 +152,40 @@
   </div>
 </div>
 
+        <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
+            @csrf
+            <div class="card-body text-black">
+            <p class="text-center">BUAT PENGGUNA</p>
+		          <form action='/user' method='post'>
+                  @csrf
+                      <h1>Username</h1>
+                    	<input type="text" name="username" placeholder="username" class="input input-bordered w-full max-w-xs bg-white" required/>
+                      <h1>Password</h1>
+                        <input type="text" name="password" placeholder="password" class="input input-bordered w-full max-w-xs bg-white" required/>
 
-@php
-                        $guru =  DB::table('guru')->count('id');
-                        $siswa =  DB::table('siswa')->count('id');
-                        $kelas =  DB::table('kelas')->count('id');
-                        $jurusan =  DB::table('jurusan')->count('id');
-@endphp
+                        <span class="label-text text-black">Level Pengguna</span>
+                      </label>
+                      <select class="select select-bordered w-full max-w-xs bg-white" name="kode_level" required>
+                        <option disabled selected>-- Pilih Level --</option>
+                        @foreach($lu as $item01)
+                          <option value="{{ $item01->id }}">
+                          {{ $item01->nama_level }}
+                          </option>
+                        @endforeach
+                        </select>
+                    @error('kode_level')
+                                    <p class="text-red-700">Maaf, Data Level Tidak Ada</p>
+                    @enderror
 
 
-<div class="container mx-auto lg:px-[20rem]">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
-
-            <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p class ="text-xl">{{ $guru }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH GURU</p>
+                	<div class="card-actions justify-end">
+                    		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
+                	</div>
+		          </form> 
             </div>
-          </div>
+        </div>
 
-          <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p>{{ $siswa }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH SISWA</p>
-            </div>
-          </div>
-
-          <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p>{{ $kelas }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH KELAS</p>
-            </div>
-          </div>
-
-          <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p>{{ $jurusan }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH JURUSAN</p>
-            </div>
-          </div>
-
-</div>
-</div>
-      
-
+        
 <div class="p-16">
   <div class="max-w-4xl mx-auto relative" x-data="{
       activeSlide= 1,
@@ -234,8 +216,6 @@
 
   </div>
 </div>
-
-
 
 </body>
 </html>

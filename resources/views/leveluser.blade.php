@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DASHBOARD</title>
+  <title>HISTORI GURU</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -153,57 +153,33 @@
 </div>
 
 
-@php
-                        $guru =  DB::table('guru')->count('id');
-                        $siswa =  DB::table('siswa')->count('id');
-                        $kelas =  DB::table('kelas')->count('id');
-                        $jurusan =  DB::table('jurusan')->count('id');
-@endphp
 
 
-<div class="container mx-auto lg:px-[20rem]">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
-
-            <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p class ="text-xl">{{ $guru }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH GURU</p>
+<div class="card w-1/2 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
+          <div class="card-body">
+            <div class="overflow-x-auto shadow-xl text-primary-content">
+            <p class="text-black text-center font-medium text-xl">Level Pengguna</P>
+            <br>
+              <table class="table w-full text-primary-content">
+                <thead>
+                  <tr class="space-x-4 text-white text-center">
+                      <th class="text-black bg-white">NO</th>
+                      <th class="text-black bg-white">Nama Level</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach($lv as $lvs)
+                    <tr class="text-white text-center">
+                      <th class="text-black bg-white">{{ $loop->iteration }}</th>
+                      <td class="text-center text-black bg-white">{{ $lvs->nama_level}}</td>
+                    @endforeach
+                </tbody>
+              </table>
             </div>
           </div>
 
-          <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p>{{ $siswa }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH SISWA</p>
-            </div>
-          </div>
 
-          <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p>{{ $kelas }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH KELAS</p>
-            </div>
-          </div>
-
-          <div class="card w-full bg-green-600 shadow-xl mx-auto">
-            <div class="card-body text-black text-center">
-                  <p>{{ $jurusan }}</p>
-              <div class="card-actions justify-end">
-              </div>
-              <p>JUMLAH JURUSAN</p>
-            </div>
-          </div>
-
-</div>
-</div>
-      
-
+   
 <div class="p-16">
   <div class="max-w-4xl mx-auto relative" x-data="{
       activeSlide= 1,
@@ -234,8 +210,6 @@
 
   </div>
 </div>
-
-
 
 </body>
 </html>
