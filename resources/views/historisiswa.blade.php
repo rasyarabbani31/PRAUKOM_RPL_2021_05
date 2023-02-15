@@ -93,21 +93,21 @@
           <table class="table w-full text-primary-content">
             <thead>
               <tr class="space-x-4 text-white text-center">
-                  <th>NO</th>
-                  <th>Nama Siswa</th>
-                  <th>NISN</th>
-                  <th>Aktivitas</th>
-                  <th>Tanggal</th>
+                  <th class="text-black bg-white">NO</th>
+                  <th class="text-black bg-white">Nama Siswa</th>
+                  <th class="text-black bg-white">NISN</th>
+                  <th class="text-black bg-white">Aktivitas</th>
+                  <th class="text-black bg-white">Tanggal</th>
               </tr>
             </thead>
             <tbody>
                 @foreach($hs as $a)
                 <tr class="text-white text-center">
-                  <th>{{ $loop->iteration }}</th>
-                  <td class="text-center">{{ $a->nama_siswa}}</td>
-                  <td class="text-center">{{ $a->nisn}}</td>
-                  <td class="text-center">{{ $a->aktivitas}}</td>
-                  <td class="text-center">{{ $a->tgl}}</td>
+                  <th class="bg-white text-black">{{ $loop->iteration }}</th>
+                  <td class="text-center text-black bg-white">{{ $a->nama_siswa}}</td>
+                  <td class="text-center text-black bg-white">{{ $a->nisn}}</td>
+                  <td class="text-center text-black bg-white">{{ $a->aktivitas}}</td>
+                  <td class="text-center text-black bg-white">{{ $a->tgl}}</td>
                 </tr>
                 @endforeach
             </tbody>

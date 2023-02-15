@@ -94,20 +94,21 @@
               <div class="card-actions justify-end">
                     		<a class="btn bg-primary text-white" href="/tingkatan/create">TAMBAH</a>
               </div>
+              <br>
               <tr class="space-x-4 text-white text-center">
-                  <th class="text-white bg-black">NO</th>
-                  <th class="text-white bg-black">Tingkatan</th>
-                  <th class="text-white bg-black"></th>
-                  <th class="text-white bg-black"></th>
+                  <th class="text-black bg-white">NO</th>
+                  <th class="text-black bg-white">Tingkatan</th>
+                  <th class="text-black bg-white"></th>
+                  <th class="text-black bg-white"></th>
               </tr>
             </thead>
             <tbody>
                 @foreach($tingkatans as $tingkatan)
                 <tr class="text-white text-center">
-                  <th class="text-white bg-black">{{ $loop->iteration }}</th>
-                  <td class="text-center text-white bg-black">{{ $tingkatan->tingkatan }}</td>
-                  <td class="text-white bg-black"><a class="btn btn-sm bg-yellow-400 text-black" href="/tingkatan/{{ $tingkatan->id }}/edit">EDIT</a></td>
-                  <td class="text-white bg-black">
+                  <th class="text-black bg-white">{{ $loop->iteration }}</th>
+                  <td class="text-center text-black bg-white">{{ $tingkatan->tingkatan }}</td>
+                  <td class="text-black bg-white"><a class="btn btn-sm bg-yellow-400 text-black" href="/tingkatan/{{ $tingkatan->id }}/edit">EDIT</a></td>
+                  <td class="text-black bg-white">
                   <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>
                         <!-- Put this part before </body> tag -->
                         <div class="modal" id="my-modal-2">

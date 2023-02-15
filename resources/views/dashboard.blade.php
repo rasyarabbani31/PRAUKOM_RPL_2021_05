@@ -13,21 +13,61 @@
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
       <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-green-600 rounded-box w-52">
         <li><a href="/dashboard" class="rounded-lg  text-black font-medium">DASHBOARD</a></li>
-          <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
-            <div class="collapse-title text-xl font-medium">
-                PRESENSI
-            </div>
-            <li tabindex="0">
-              <a class="rounded-lg text-black" href="/presensisiswa">SISWA</a>
-            </li>
-            <li tabindex="0">
-              <a class="rounded-lg text-black" href="/presensiguru">GURU</a>
-            </li>
+          <div class="dropdown dropdown-bottom">
+              <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-green-600 rounded-box">
+                <div class="collapse-title text-base font-medium text-black">
+                  PRESENSI
+                </div>
+                    <div class="collapse-content"> 
+                          <li>
+                          <a class="rounded-lg text-black" href="/presensisiswa">SISWA</a>
+                          </li>
+                          <li>
+                          <a class="rounded-lg text-black" href="/presensiguru">GURU</a>
+                          </li>
+                    </div>
+              </div>
+
+              <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-green-600 rounded-box">
+                <div class="collapse-title text-base font-medium text-black">
+                  LIST INFO
+                </div>
+                    <div class="collapse-content"> 
+                          <li>
+                          <a class="rounded-lg text-black" href="/siswa">SISWA</a>
+                          </li>
+                          <li>
+                          <a class="rounded-lg text-black" href="/guru">GURU</a>
+                          </li>
+                          <li>
+                          <a class="rounded-lg text-black" href="/tingkatan">TINGKATAN</a>
+                          </li>
+                          <li>
+                          <a class="rounded-lg text-black" href="/jurusan">JURUSAN</a>
+                          </li>
+                    </div>
+              </div>
+              
+              <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-green-600 rounded-box">
+                <div class="collapse-title text-base font-medium text-black">
+                  HISTORI HAPUS
+                </div>
+                    <div class="collapse-content"> 
+                          <li>
+                          <a class="rounded-lg text-black" href="/historisiswa">SISWA</a>
+                          </li>
+                          <li>
+                          <a class="rounded-lg text-black" href="/historiguru">GURU</a>
+                          </li>
+                    </div>
+              </div>
+
           </div>
+      </ul>
     </div>
     <a class="btn btn-ghost normal-case text-xl text-black" href="/about">ALINGGAM</a>
   </div>
@@ -90,11 +130,12 @@
 @php
                         $guru =  DB::table('guru')->count('id');
                         $siswa =  DB::table('siswa')->count('id');
+                        $kelas =  DB::table('kelas')->count('id');
                         $jurusan =  DB::table('jurusan')->count('id');
 @endphp
 
 
-<div class="card w-96 bg-green-600 shadow-xl">
+<div class="card w-96 bg-green-600 shadow-xl mx-auto">
   <div class="card-body text-white text-center">
         <p class ="text-xl">{{ $guru }}</p>
     <div class="card-actions justify-end">
@@ -103,7 +144,7 @@
   </div>
 </div>
 
-<div class="card w-96 bg-green-600 shadow-xl">
+<div class="card w-96 bg-green-600 shadow-xl mx-auto">
   <div class="card-body text-white text-center">
         <p>{{ $siswa }}</p>
     <div class="card-actions justify-end">
@@ -112,7 +153,16 @@
   </div>
 </div>
 
-<div class="card w-96 bg-green-600 shadow-xl">
+<div class="card w-96 bg-green-600 shadow-xl mx-auto">
+  <div class="card-body text-white text-center">
+        <p>{{ $kelas }}</p>
+    <div class="card-actions justify-end">
+    </div>
+    <p>JUMLAH KELAS</p>
+  </div>
+</div>
+
+<div class="card w-96 bg-green-600 shadow-xl mx-auto">
   <div class="card-body text-white text-center">
         <p>{{ $jurusan }}</p>
     <div class="card-actions justify-end">

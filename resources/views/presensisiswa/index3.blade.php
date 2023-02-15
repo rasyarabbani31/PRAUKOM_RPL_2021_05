@@ -100,48 +100,49 @@
             @csrf
               <div class="form-control">
               <div class="input-group">
-                <input type="search" placeholder="Cari Presensi Siswa" name="katakunci" class="input input-bordered bg-black" value="{{ Request::get('katakunci') }}" aria-label="Search" />
+                <input type="search" placeholder="Cari Presensi Siswa" name="katakunci" class="input input-bordered text-black bg-white" value="{{ Request::get('katakunci') }}" aria-label="Search" />
                   <button class="btn btn-square bg-black" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                   </button>
               </div>
             </div>
             </form>
-
+              <br>
               <tr class="space-x-4 text-white text-center">
-                  <th class="text-white bg-black">NO</th>
-                  <th class="text-white bg-black">Tanggal</th>
-                  <th class="text-white bg-black">Siswa</th>
-                  <th class="text-white bg-black">Kelas</th>
-                  <th class="text-white bg-black">Jurusan</th>
-                  <th class="text-white bg-black">Keterangan Hadir</th>
-                  <th class="text-white bg-black">Bukti Foto</th>
-                  <th class="text-white bg-black"></th>
-                  <th class="text-white bg-black"></th>
+                  <th class="text-black bg-white">NO</th>
+                  <th class="text-black bg-white">Tanggal</th>
+                  <th class="text-black bg-white">Siswa</th>
+                  <th class="text-black bg-white">Kelas</th>
+                  <th class="text-black bg-white">Jurusan</th>
+                  <th class="text-black bg-white">Keterangan Hadir</th>
+                  <th class="text-black bg-white">Bukti Foto</th>
+                  <th class="text-black bg-white"></th>
+                  <th class="text-black bg-white"></th>
               </tr>
             </thead>
             <tbody>
                 @foreach($siswa as $presensisiswa)
                 <tr class="text-white">
-                  <th class="text-center text-white bg-black">{{ $loop->iteration }}</th>
-                  <td class="text-center text-white bg-black">{{ $presensisiswa->tanggal }}</td>
-                  <td class="text-center text-white bg-black">{{ $presensisiswa->nama_siswa }}</td>
-                  <td class="text-center text-white bg-black">{{ $presensisiswa->tingkatan }}</td>
-                  <td class="text-center text-white bg-black">{{ $presensisiswa->nama_jurusan }}</td>
-                  <td class="text-center text-white bg-black">{{ $presensisiswa->keterangan }}</td>
-                  <td class="text-center text-white bg-black">
+                  <th class="text-center text-black bg-white">{{ $loop->iteration }}</th>
+                  <td class="text-center text-black bg-white">{{ $presensisiswa->tanggal }}</td>
+                  <td class="text-center text-black bg-white">{{ $presensisiswa->nama_siswa }}</td>
+                  <td class="text-center text-black bg-white">{{ $presensisiswa->tingkatan }}</td>
+                  <td class="text-center text-black bg-white">{{ $presensisiswa->nama_jurusan }}</td>
+                  <td class="text-center text-black bg-white">{{ $presensisiswa->keterangan }}</td>
+                  <td class="text-center text-black bg-white">
                     <a href="{{ asset('storage/'.$presensisiswa->gambar) }}" target="_blank" class="group">
                         <img src="{{ asset('storage/'.$presensisiswa->gambar) }}" class="mx-auto shadow  group-hover:brightness-50 ">
                     </a>
                   </td>
-                  <td class="text-white bg-black"><a class="btn btn-sm text-black bg-yellow-400" href="/presensisiswa/{{ $presensisiswa->id }}/edit">EDIT</a></td>
-                  <td class="text-white bg-black">
+                  <td class="text-black bg-white"><a class="btn btn-sm text-black bg-yellow-400" href="/presensisiswa/{{ $presensisiswa->id }}/edit">EDIT</a></td>
+                  <td class="text-black bg-white">
                   <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>
                         <!-- Put this part before </body> tag -->
                         <div class="modal" id="my-modal-2">
                               <div class="modal-box bg-green-600">
                                   <h3 class="font-bold text-lg text-black">APAKAH ANDA YAKIN MENGHAPUS INI?</h3>
-                                  
+                                  <br>
+                                  <p>Data Presensi Siswa akan dihapus dan data tidak dapat kembali</p>
                                 <div class="modal-action">
                                     <a href="" class="btn btn-sm bg-yellow-400 text-black">TIDAK</a>
                         <form action="/presensisiswa/{{ $presensisiswa->id }}" method="post">

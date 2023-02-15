@@ -93,22 +93,23 @@
               <div class="card-actions justify-end">
                     		<a class="btn bg-blue-400 text-black" href="/jurusan/create">TAMBAH</a>
               </div>
+              <br>
               <tr class="space-x-4 text-white text-center">
-                  <th class="text-white bg-black">NO</th>
-                  <th class="text-white bg-black">Jurusan</th>
-                  <th class="text-white bg-black">Singkatan</th>
-                  <th class="text-white bg-black"></th>
-                  <th class="text-white bg-black"></th>
+                  <th class="text-black bg-white">NO</th>
+                  <th class="text-black bg-white">Jurusan</th>
+                  <th class="text-black bg-white">Singkatan</th>
+                  <th class="text-black bg-white"></th>
+                  <th class="text-black bg-white"></th>
               </tr>
             </thead>
             <tbody>
                 @foreach($jurusans as $jurusan)
                 <tr class="text-white text-center">
-                  <th class="text-white bg-black">{{ $loop->iteration }}</th>
-                  <td class="text-white bg-black">{{ $jurusan->nama_jurusan }}</td>
-                  <td class="text-white bg-black">{{ $jurusan->singkatan_jurusan }}</td>
-                  <td class="text-white bg-black"><a class="btn btn-sm bg-yellow-400 text-black" href="/jurusan/{{ $jurusan->id }}/edit">EDIT</a></td>
-                  <td class="text-white bg-black">
+                  <th class="text-black bg-white">{{ $loop->iteration }}</th>
+                  <td class="text-black bg-white">{{ $jurusan->nama_jurusan }}</td>
+                  <td class="text-black bg-white">{{ $jurusan->singkatan_jurusan }}</td>
+                  <td class="text-black bg-white"><a class="btn btn-sm bg-yellow-400 text-black" href="/jurusan/{{ $jurusan->id }}/edit">EDIT</a></td>
+                  <td class="text-black bg-white">
                         <!-- The button to open modal -->
                         <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>
                         <!-- Put this part before </body> tag -->
