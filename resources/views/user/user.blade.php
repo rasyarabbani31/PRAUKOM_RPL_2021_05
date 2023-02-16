@@ -177,8 +177,9 @@
               <tr class="space-x-4 text-white text-center">
                   <th class="text-black bg-white">NO</th>
                   <th class="text-black bg-white">Username</th>
-                  <th class="text-black bg-white">Password</th>
+                  {{-- <th class="text-black bg-white">Password</th> --}}
                   <th class="text-black bg-white">Level Pengguna</th>
+                  <th class="text-black bg-white"></th>
                   <th class="text-black bg-white"></th>
                   <th class="text-black bg-white"></th>
               </tr>

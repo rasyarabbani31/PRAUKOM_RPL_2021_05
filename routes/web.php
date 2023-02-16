@@ -11,6 +11,7 @@ use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\HistoriSiswaController;
 use App\Http\Controllers\HistoriGuruController;
 use App\Http\Controllers\LevelUserController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [LoginController::class, 'loginPage']);
+Route::get('/login', [LoginController::class, 'loginPage']);
+Route::post('/login',[LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);
+
 
 Route::get('/dashboard', [DashboardController::class, 'index01']);
 

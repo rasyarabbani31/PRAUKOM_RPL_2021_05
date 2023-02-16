@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -44,18 +45,19 @@ class UserController extends Controller
 
     public function storeuser(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'username'=>'required|max:50',
-            'password' => 'required|max:50',
+            'password' => 'required',
             'kode_level'=>'required'
         ]);
-        
+       
         DB::insert("CALL tambah_user(:username, :password, :kode_level)", [
             'username' => $request->input('username'), 
-            'password' => $request->input('password'), 
+            'password' => Hash::make($request->input('password')), 
             'kode_level' => $request->input('kode_level')
         ]);
-
+      
         // User::insert([
         // 'username' => $request->username,
         // 'password' => $request->password,
@@ -79,7 +81,7 @@ class UserController extends Controller
     {   
         $request->validate([
             'username'=>'required|max:50',
-            'password' => 'required|max:50',
+            'password' => 'required',
             'kode_level'=>'required'
         ]);
         
