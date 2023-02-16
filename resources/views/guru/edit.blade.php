@@ -165,7 +165,7 @@
                     	<input type="text" name="nama_guru" value="{{ $guru->nama_guru }}" placeholder="Nama Guru" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
                       <h1>Jenis Kelamin</h1>
             		      <select class="select select-bordered w-full max-w-xs bg-white" name="jk_guru" required>
-                        <option disabled selected>-- Pilih JK --</option>
+                        {{-- <option disabled selected>-- Pilih JK --</option> --}}
                           <option value="Laki-Laki">Laki-Laki</option>
                           <option value="Perempuan">Perempuan</option>
                         </select>

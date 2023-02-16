@@ -22,10 +22,12 @@ class UserController extends Controller
     {
         $katakunci = $request->katakunci;
         $users = DB::table('user')
-                ->join('level_user', 'user.kode_level', '=', 'level.id')
+                ->join('level_user', 'user.kode_level', '=', 'level_user.id')
                 ->select('user.*', 'level_user.*')
                 ->where('username','like',"%$katakunci%")
+                ->orWhere('nama_level','like',"%$katakunci%")
                 ->orderBy('username','asc')
+                ->orderBy('nama_level','asc')
                 ->get();
                 
         return view ('user.user', compact('users'));
@@ -43,16 +45,22 @@ class UserController extends Controller
     public function storeuser(Request $request)
     {
         $request->validate([
-            'username'=>'required',
-            'password' => 'required',
+            'username'=>'required|max:50',
+            'password' => 'required|max:50',
             'kode_level'=>'required'
         ]);
-
-        User::insert([
-        'username' => $request->username,
-        'password' => $request->password,
-        'kode_level' => $request->kode_level
+        
+        DB::insert("CALL tambah_user(:username, :password, :kode_level)", [
+            'username' => $request->input('username'), 
+            'password' => $request->input('password'), 
+            'kode_level' => $request->input('kode_level')
         ]);
+
+        // User::insert([
+        // 'username' => $request->username,
+        // 'password' => $request->password,
+        // 'kode_level' => $request->kode_level
+        // ]);
 
         return redirect('user');
     }
@@ -70,8 +78,8 @@ class UserController extends Controller
     public function updateuser(Request $request, $id)
     {   
         $request->validate([
-            'username'=>'required',
-            'password' => 'required',
+            'username'=>'required|max:50',
+            'password' => 'required|max:50',
             'kode_level'=>'required'
         ]);
         

@@ -75,6 +75,7 @@ Route::delete('jurusan/{id}', [JurusanController::class, 'destroyjurusan']);
 
 
 Route::get('user', [UserController::class, 'user']);
+Route::get('user/search', [UserController::class, 'searchuser']);
 Route::get('user/create', [UserController::class, 'createuser']);
 Route::post('user', [UserController::class, 'storeuser']);
 Route::get('user/{id}/edit', [UserController::class, 'edituser']);

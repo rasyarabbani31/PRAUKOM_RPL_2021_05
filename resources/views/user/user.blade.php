@@ -162,7 +162,7 @@
                     		<a class="btn bg-primary text-white" href="/user/create">TAMBAH</a>
               </div>
 
-            <form action="/siswa/search" method="GET">
+            <form action="/user/search" method="GET">
             @csrf
               <div class="form-control">
               <div class="input-group">

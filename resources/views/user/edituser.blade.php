@@ -163,11 +163,16 @@
 
                     <h1>Username</h1>
                     	<input type="text" name="username" value="{{ $user->username }}" placeholder="usernane" class="input input-bordered w-full max-w-xs bg-white" required/>
+                    @error('username')
+                                    <p class="text-red-700">Maaf, Username Tidak Valid</p>
+                    @enderror
                     <h1>Password</h1>
                     	<input type="text" name="password" value="{{ $user->password }}" placeholder="usernane" class="input input-bordered w-full max-w-xs bg-white" required/>
+                    @error('password')
+                                    <p class="text-red-700">Maaf, Password Tidak Valid</p>
+                    @enderror
                     <h1>Level Pengguna</h1>
                     <select class="select select-bordered w-full max-w-xs bg-white" name="kode_level" required>
-                        <option disabled selected>-- Pilih Level --</option>
                         @foreach($lu1 as $item01)
                           <option value="{{ $item01->id }}">
                           {{ $item01->nama_level }}

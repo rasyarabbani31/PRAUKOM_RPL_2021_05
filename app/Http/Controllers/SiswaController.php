@@ -76,7 +76,7 @@ class SiswaController extends Controller
     public function editsiswa($id)
     {
         $siswa = Siswa::where('id', $id)->first();
-        dd($siswa);
+        // dd($siswa);
         $kelas2 = DB::table('kelas') ->get();
         $jurusan2 = DB::table('jurusan') ->get();
 

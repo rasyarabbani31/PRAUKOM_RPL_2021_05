@@ -166,7 +166,7 @@
                     	<input type="text" name="nama_siswa" value="{{ $siswa->nama_siswa }}" placeholder="Nama Siswa" class="input input-bordered w-full max-w-xs bg-white" required/>
                       <h1>Jenis Kelamin</h1>
             		      <select class="select select-bordered w-full max-w-xs bg-white" name="jk_siswa" required>
-                        <option disabled selected>-- Pilih JK --</option>
+                        {{-- <option disabled selected>-- Pilih JK --</option> --}}
                           <option value="Laki-Laki">Laki-Laki</option>
                           <option value="Perempuan">Perempuan</option>
                         </select>
@@ -178,7 +178,7 @@
                         <span class="label-text text-black">Kelas</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs bg-white text-black" name="kode_kelas" required>
-                        <option disabled selected>-- Pilih Kelas --</option>
+                        {{-- <option disabled selected>-- Pilih Kelas --</option> --}}
                         @foreach($kelas2 as $item01)
                           <option value="{{ $item01->id }}">
                           {{ $item01->tingkatan }}
@@ -193,7 +193,7 @@
                         <span class="label-text text-black">Nama jurusan</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs bg-white text-black" name="kode_jurusan" required>
-                        <option disabled selected>-- Pilih jurusan --</option>
+                        {{-- <option disabled selected>-- Pilih jurusan --</option> --}}
                         @foreach($jurusan2 as $item02)
                           <option value="{{ $item02->id }}">
                           {{ $item02->nama_jurusan }}

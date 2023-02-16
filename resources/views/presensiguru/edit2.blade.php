@@ -173,7 +173,7 @@
                         <span class="label-text text-black">Nama Guru</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs text-black bg-white" name="kode_guru" required>
-                        <option disabled selected>-- Pilih Guru --</option>
+                        {{-- <option disabled selected>-- Pilih Guru --</option> --}}
                         @foreach($guru1 as $item)
                           <option value="{{ $item->id }}">
                           {{ $item->nama_guru }}
@@ -189,7 +189,7 @@
                         <span class="label-text text-black">Keterangan</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs text-black bg-white" name="kode_keterangan" required>
-                        <option disabled selected>-- Pilih keterangan --</option>
+                        {{-- <option disabled selected>-- Pilih keterangan --</option> --}}
                         @foreach($keterangan as $item1)
                           <option value="{{ $item1->id }}">
                           {{ $item1->keterangan }}

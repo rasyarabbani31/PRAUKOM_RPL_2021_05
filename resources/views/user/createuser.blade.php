@@ -160,9 +160,17 @@
                   @csrf
                       <h1>Username</h1>
                     	<input type="text" name="username" placeholder="username" class="input input-bordered w-full max-w-xs bg-white" required/>
-                      <h1>Password</h1>
+                      
+                      @error('username')
+                                    <p class="text-red-700">Maaf, Username Tidak Valid</p>
+                    @enderror
+                    
+                    <h1>Password</h1>
                         <input type="text" name="password" placeholder="password" class="input input-bordered w-full max-w-xs bg-white" required/>
-
+                        @error('password')
+                                    <p class="text-red-700">Maaf, Password Tidak Valid</p>
+                    @enderror
+a
                         <span class="label-text text-black">Level Pengguna</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs bg-white" name="kode_level" required>

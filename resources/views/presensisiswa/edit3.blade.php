@@ -168,7 +168,7 @@
                         <span class="label-text text-black">Nama Siswa</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs bg-white" name="kode_siswa" required>
-                        <option disabled selected>-- Pilih Siswa --</option>
+                        {{-- <option disabled selected>-- Pilih Siswa --</option> --}}
                         @foreach($siswa1 as $item4)
                           <option value="{{ $item4->id }}">
                           {{ $item4->nama_siswa }}
@@ -183,7 +183,7 @@
                         <span class="label-text text-black">Kelas</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs bg-white" name="kode_kelas" required>
-                        <option disabled selected>-- Pilih Kelas --</option>
+                        {{-- <option disabled selected>-- Pilih Kelas --</option> --}}
                         @foreach($kelas1 as $item2)
                           <option value="{{ $item2->id }}">
                           {{ $item2->tingkatan }}
@@ -198,7 +198,7 @@
                         <span class="label-text text-black">Nama jurusan</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs bg-white" name="kode_jurusan" required>
-                        <option disabled selected>-- Pilih jurusan --</option>
+                        {{-- <option disabled selected>-- Pilih jurusan --</option> --}}
                         @foreach($jurusan1 as $item3)
                           <option value="{{ $item3->id }}">
                           {{ $item3->nama_jurusan }}
@@ -213,7 +213,7 @@
                         <span class="label-text text-black">Keterangan</span>
                       </label>
                       <select class="select select-bordered w-full max-w-xs bg-white" name="kode_keterangan" required>
-                        <option disabled selected>-- Pilih Keterangan --</option>
+                        {{-- <option disabled selected>-- Pilih Keterangan --</option> --}}
                         @foreach($keterangan1 as $item1)
                           <option value="{{ $item1->id }}">
                           {{ $item1->keterangan }}

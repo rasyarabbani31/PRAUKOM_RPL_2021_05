@@ -203,11 +203,11 @@
                                   <p>Histori Hapus Guru</p>
                                 <div class="modal-action">
                                     <a href="" class="btn btn-sm bg-yellow-400 text-black">TIDAK</a>
-                        <form action="/guru/{{ $guru->id }}" method="post">
-                            @csrf
-                            @method("delete")
-                            <button class="btn btn-sm bg-red-400 text-black" type="submit">DELETE</button>
-                        </form>
+                                  <form action="/guru/{{ $guru->id }}" method="post">
+                                      @csrf
+                                      @method("delete")
+                                      <button class="btn btn-sm bg-red-400 text-black" type="submit">DELETE</button>
+                                  </form>
                                 </div>
                               </div>
                         </div>

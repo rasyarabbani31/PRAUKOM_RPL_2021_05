@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->id(); //autoincrement+auto primary key
-            $table->string('username');
-            $table->string('password');
+            $table->string('username', 50);
+            $table->string('password', 50);
             $table->unsignedBigInteger('kode_level'); //foreign key 
             $table->rememberToken();
             $table->timestamps();
