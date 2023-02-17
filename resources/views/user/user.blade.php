@@ -181,7 +181,6 @@
                   <th class="text-black bg-white">Level Pengguna</th>
                   <th class="text-black bg-white"></th>
                   <th class="text-black bg-white"></th>
-                  <th class="text-black bg-white"></th>
               </tr>
             </thead>
             <tbody>
@@ -189,7 +188,7 @@
                 <tr class="text-white">
                   <th class="text-center text-black bg-white">{{ $loop->iteration }}</th>
                   <td class="text-center text-black bg-white">{{ $user->username }}</td>
-                  <td class="text-center text-black bg-white">{{ $user->password }}</td>
+                  {{-- <td class="text-center text-black bg-white">{{ $user->password }}</td> --}}
                   <td class="text-center text-black bg-white">{{ $user->nama_level }}</td>
                   <td class="text-black bg-white"><a class="btn btn-sm bg-yellow-400 text-black" href="/user/{{ $user->id }}/edit">EDIT</a></td>
                   <td class="text-black bg-white">

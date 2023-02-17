@@ -28,14 +28,18 @@
             </label>
             <input type="text" name="username" id="username" @error("username") invalid @enderror  placeholder="username" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
             @error("username")
-              <div class="invalid-feedback" style="color:red;">
-                {{$message}}
-              </div>
+            
+                <p class="text-red-700">Maaf, Username Tidak Valid</p>
+                
             @enderror
             <label for="password">
               <h1 class="text-black">PASSWORD</h1>            
             </label>
             <input type="password" name="password" id='password' placeholder="password" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
+            @error('password')
+                                    <p class="text-red-700">Maaf, Password Tidak Valid</p>
+            @enderror
+
             <label for="level_user">
               <h1 class="text-black">LEVEL USER</h1>
             </label>
@@ -46,9 +50,9 @@
               @endforeach
             </select>
             @error("kode_level")
-              <div class="invalid-feedback" style="color:red;">
-                {{$message}}
-              </div>
+              
+                <p class="text-red-700">Maaf, Level Pengguna Tidak Valid</p>
+              
             @enderror
             <div class="card-actions justify-end">
                   <button type='submit' class="btn btn-primary mx-auto">Login</button>

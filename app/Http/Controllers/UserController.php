@@ -79,17 +79,27 @@ class UserController extends Controller
 
     public function updateuser(Request $request, $id)
     {   
-        $request->validate([
+        $credential=$request->validate([
             'username'=>'required|max:50',
-            'password' => 'required',
+            'password' => 'nullable',
             'kode_level'=>'required'
         ]);
         
-        User::where('id', $id)->update([
-            'username' => $request->username,
-            'password' => $request->password,
-            'kode_level' => $request->kode_level
+        if($credential['password'] == null){
+            //
+            User::where('id', $id)->update([
+                'username' => $request->username,
+                // 'password' => Hash::make($request->input('password')),
+                'kode_level' => $request->kode_level
             ]);
+        }else{
+            User::where('id', $id)->update([
+                'username' => $request->username,
+                'password' => Hash::make($request->input('password')),
+                'kode_level' => $request->kode_level
+            ]);
+        }
+        
 
         return redirect('user');
     }

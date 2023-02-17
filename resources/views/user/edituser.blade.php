@@ -167,7 +167,8 @@
                                     <p class="text-red-700">Maaf, Username Tidak Valid</p>
                     @enderror
                     <h1>Password</h1>
-                    	<input type="text" name="password" value="{{ $user->password }}" placeholder="usernane" class="input input-bordered w-full max-w-xs bg-white" required/>
+                    	<input type="password" name="password"  placeholder="password" class="input input-bordered w-full max-w-xs bg-white"/>
+                    {{-- value="{{ $user->password }}" --}}
                     @error('password')
                                     <p class="text-red-700">Maaf, Password Tidak Valid</p>
                     @enderror
