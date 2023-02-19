@@ -166,7 +166,7 @@
                     @enderror
                     
                     <h1>Password</h1>
-                        <input type="text" name="password" placeholder="password" class="input input-bordered w-full max-w-xs bg-white" required/>
+                        <input type="password" name="password" placeholder="password" class="input input-bordered w-full max-w-xs bg-white" required/>
                         @error('password')
                                     <p class="text-red-700">Maaf, Password Tidak Valid</p>
                     @enderror

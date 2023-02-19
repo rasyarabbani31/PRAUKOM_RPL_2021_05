@@ -187,7 +187,7 @@
                   <p>{{ $kelas }}</p>
               <div class="card-actions justify-end">
               </div>
-              <p>JUMLAH KELAS</p>
+              <p>JUMLAH TINGKATAN</p>
             </div>
           </div>
 

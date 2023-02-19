@@ -34,44 +34,60 @@ class LoginController extends Controller{
 		if( Auth::attempt($credentials) ){
 			$request->session()->regenerate();
 			return redirect()->intended('/dashboard');
-
-		}elseif(DB::table('user')->where('username',$credentials['username'])->count() > 0 and Hash::check($credentials['password'], $user->password)){
-			echo('username & password is correct <br>');
-			$vkl=DB::table('level_user')->where('id', $credentials['kode_level'])->count();
-            
-			if($credentials['kode_level'] > $user->kode_level and $vkl > 0){
-				Auth::attempt(['username'=>$credentials['username'], 'password'=>$credentials['password']]);
-				echo('<br> user : ');
-				echo(Auth::user());
-				$request->session()->put('roleAs', $credentials['kode_level']); 
-				echo('<br>role : ');
-				echo($request->session()->get('roleAs')); 
-				$request->session()->regenerate();
-
-				return redirect()->intended('/dashboard');
-
-			}else{
-				if(Auth::check()){
-					Auth::logout();
-					$request->session()->invalidate();
-					$request->session()->regenerateToken();
-				}
-
-
-				return redirect('/login')->withErrors(['kode_level'=>'ping']);
-			}
-			echo("<a href='/login'>login</a>");
 		}else{
-            if(DB::table('user')->where('username',$credentials['username'])->count() == 0 ){
-                return back()->withErrors([
-                    'username' => 'Username tidak valid'
-                ])->onlyInput('username');
-            }elseif(!Hash::check($credentials['password'], $user->password)){
-                return back()->withErrors([
-                    'password' => 'Password tidak valid'
-                ])->onlyInput('password');
-            }
+			if(DB::table('user')->where('username',$credentials['username'])->count() == 0 ){
+			    return back()->withErrors([
+			        'username' => 'Username tidak valid'
+			    ])->onlyInput('username');
+			}elseif(!Hash::check($credentials['password'], $user->password)){
+			    return back()->withErrors([
+			        'password' => 'Password tidak valid'
+			    ])->onlyInput('password');
+			}else{
+				return back()->withErrors([
+					'kode_level' => 'level pengguna tidak valid'
+				])->onlyInput('kode_level');
+			}
 		}
+
+
+		// }elseif(DB::table('user')->where('username',$credentials['username'])->count() > 0 and Hash::check($credentials['password'], $user->password)){
+		// 	echo('username & password is correct <br>');
+		// 	$vkl=DB::table('level_user')->where('id', $credentials['kode_level'])->count();
+            
+		// 	if($credentials['kode_level'] > $user->kode_level and $vkl > 0){
+		// 		Auth::attempt(['username'=>$credentials['username'], 'password'=>$credentials['password']]);
+		// 		echo('<br> user : ');
+		// 		echo(Auth::user());
+		// 		$request->session()->put('roleAs', $credentials['kode_level']); 
+		// 		echo('<br>role : ');
+		// 		echo($request->session()->get('roleAs')); 
+		// 		$request->session()->regenerate();
+
+		// 		return redirect()->intended('/dashboard');
+
+		// 	}else{
+		// 		if(Auth::check()){
+		// 			Auth::logout();
+		// 			$request->session()->invalidate();
+		// 			$request->session()->regenerateToken();
+		// 		}
+
+
+		// 		return redirect('/login')->withErrors(['kode_level'=>'ping']);
+		// 	}
+		// 	echo("<a href='/login'>login</a>");
+		// }else{
+        //     if(DB::table('user')->where('username',$credentials['username'])->count() == 0 ){
+        //         return back()->withErrors([
+        //             'username' => 'Username tidak valid'
+        //         ])->onlyInput('username');
+        //     }elseif(!Hash::check($credentials['password'], $user->password)){
+        //         return back()->withErrors([
+        //             'password' => 'Password tidak valid'
+        //         ])->onlyInput('password');
+        //     }
+		// 
 	}
 
 
