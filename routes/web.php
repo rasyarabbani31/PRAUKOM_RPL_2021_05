@@ -25,14 +25,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//login
 Route::get('/', [LoginController::class, 'loginPage']);
 Route::get('/login', [LoginController::class, 'loginPage']);
 Route::post('/login',[LoginController::class, 'authenticate']);
+
+
+//logout
 Route::get('/logout', [LoginController::class, 'logout']);
 
 
+//dashboard
 Route::get('/dashboard', [DashboardController::class, 'index01']);
 
+
+//presensisiswa
 Route::get('presensisiswa', [PresensiSiswaController::class, 'presensisiswa']);
 Route::get('presensisiswa/search', [PresensiSiswaController::class, 'searchpresensisiswa']);
 Route::get('presensisiswa/create', [PresensiSiswaController::class, 'createpresensisiswa']);
@@ -41,6 +49,8 @@ Route::get('presensisiswa/{id}/edit', [PresensiSiswaController::class, 'editpres
 Route::put('presensisiswa/{id}', [PresensiSiswaController::class, 'updatepresensisiswa']);
 Route::delete('presensisiswa/{id}', [PresensiSiswaController::class, 'destroypresensisiswa']);
 
+
+//presensiguru
 Route::get('presensiguru', [PresensiGuruController::class, 'presensiguru']);
 Route::get('presensiguru/search', [PresensiGuruController::class, 'searchpresensiguru']);
 Route::get('presensiguru/create', [PresensiGuruController::class, 'createpresensiguru']);
@@ -49,14 +59,9 @@ Route::get('presensiguru/{id}/edit', [PresensiGuruController::class, 'editpresen
 Route::put('presensiguru/{id}', [PresensiGuruController::class, 'updatepresensiguru']);
 Route::delete('presensiguru/{id}', [PresensiGuruController::class, 'destroypresensiguru']);
 
-Route::get('guru', [GuruController::class, 'guru']);
-Route::get('guru/search', [GuruController::class, 'searchguru']);
-Route::get('guru/create', [GuruController::class, 'createguru']);
-Route::post('guru', [GuruController::class, 'storeguru']);
-Route::get('guru/{id}/edit', [GuruController::class, 'editguru']);
-Route::put('guru/{id}', [GuruController::class, 'updateguru']);
-Route::delete('guru/{id}', [GuruController::class, 'destroyguru']);
 
+
+//siswa
 Route::get('siswa', [SiswaController::class, 'siswa']);
 Route::get('siswa/search', [SiswaController::class, 'searchsiswa']);
 Route::get('siswa/create', [SiswaController::class, 'createsiswa']);
@@ -65,6 +70,19 @@ Route::get('siswa/{id}/edit', [SiswaController::class, 'editsiswa']);
 Route::put('siswa/{id}', [SiswaController::class, 'updatesiswa']);
 Route::delete('siswa/{id}', [SiswaController::class, 'destroysiswa']);
 
+
+//guru
+Route::get('guru', [GuruController::class, 'guru']);
+Route::get('guru/search', [GuruController::class, 'searchguru']);
+Route::get('guru/create', [GuruController::class, 'createguru']);
+Route::post('guru', [GuruController::class, 'storeguru']);
+Route::get('guru/{id}/edit', [GuruController::class, 'editguru']);
+Route::put('guru/{id}', [GuruController::class, 'updateguru']);
+Route::delete('guru/{id}', [GuruController::class, 'destroyguru']);
+
+
+
+//tingkatan
 Route::get('tingkatan', [TingkatanController::class, 'tingkatan']);
 Route::get('tingkatan/create', [TingkatanController::class, 'createtingkatan']);
 Route::post('tingkatan', [TingkatanController::class, 'storetingkatan']);
@@ -72,6 +90,9 @@ Route::get('tingkatan/{id}/edit', [TingkatanController::class, 'edittingkatan'])
 Route::put('tingkatan/{id}', [TingkatanController::class, 'updatetingkatan']);
 Route::delete('tingkatan/{id}', [TingkatanController::class, 'destroytingkatan']);
 
+
+
+//jurusan
 Route::get('jurusan', [JurusanController::class, 'jurusan']);
 Route::get('jurusan/create', [JurusanController::class, 'createjurusan']);
 Route::post('jurusan', [JurusanController::class, 'storejurusan']);
@@ -80,6 +101,14 @@ Route::put('jurusan/{id}', [JurusanController::class, 'updatejurusan']);
 Route::delete('jurusan/{id}', [JurusanController::class, 'destroyjurusan']);
 
 
+
+//histori
+Route::get('historisiswa', [HistoriSiswaController::class, 'historisiswa']);
+Route::get('historiguru', [HistoriguruController::class, 'historiguru']);
+
+
+
+//pengguna
 Route::get('user', [UserController::class, 'user']);
 Route::get('user/search', [UserController::class, 'searchuser']);
 Route::get('user/create', [UserController::class, 'createuser']);
@@ -88,10 +117,6 @@ Route::get('user/{id}/edit', [UserController::class, 'edituser']);
 Route::put('user/{id}', [UserController::class, 'updateuser']);
 Route::delete('user/{id}', [UserController::class, 'destroyuser']);
 
-Route::get('historisiswa', [HistoriSiswaController::class, 'historisiswa']);
 
-
-Route::get('historiguru', [HistoriguruController::class, 'historiguru']);
-
-
+//levelpengguna
 Route::get('leveluser', [LevelUserController::class, 'leveluser']);
