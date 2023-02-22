@@ -147,7 +147,7 @@
     </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn bg-red-400 text-black" href="">LOGOUT</a>
+      <a class="btn bg-red-400 text-black"  href="/logout">LOGOUT</a>
     </div>
   </div>
 </div>
@@ -158,10 +158,14 @@
         <p class="text-black text-center font-medium">DAFTAR JURUSAN</P>
           <table class="table w-full text-primary-content">
             <thead>
+
+            @can('cud_jurusan')
               <div class="card-actions justify-end">
                     		<a class="btn bg-blue-400 text-black" href="/jurusan/create">TAMBAH</a>
               </div>
+              @endcan
               <br>
+
               <tr class="space-x-4 text-white text-center">
                   <th class="text-black bg-white">NO</th>
                   <th class="text-black bg-white">Jurusan</th>
@@ -176,9 +180,14 @@
                   <th class="text-black bg-white">{{ $loop->iteration }}</th>
                   <td class="text-black bg-white">{{ $jurusan->nama_jurusan }}</td>
                   <td class="text-black bg-white">{{ $jurusan->singkatan_jurusan }}</td>
-                  <td class="text-black bg-white"><a class="btn btn-sm bg-yellow-400 text-black" href="/jurusan/{{ $jurusan->id }}/edit">EDIT</a></td>
+                  <td class="text-black bg-white">
+                  @can('cud_jurusan')
+                  <a class="btn btn-sm bg-yellow-400 text-black" href="/jurusan/{{ $jurusan->id }}/edit">EDIT</a>
+                  @endcan
+                  </td>
                   <td class="text-black bg-white">
                         <!-- The button to open modal -->
+                  @can('cud_jurusan')
                         <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>
                         <!-- Put this part before </body> tag -->
                         <div class="modal" id="my-modal-2">
@@ -195,6 +204,7 @@
                                 </div>
                               </div>
                         </div>
+                        @endcan
                   </td>
                 </tr>
                 @endforeach

@@ -147,7 +147,7 @@
     </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn bg-red-400 text-black" href="">LOGOUT</a>
+      <a class="btn bg-red-400 text-black" href="/logout">LOGOUT</a>
     </div>
   </div>
 </div>
@@ -158,9 +158,12 @@
         <p class="text-black text-center font-medium">DAFTAR PENGGUNA</P>
           <table class="table w-full text-primary-content">
             <thead>
+
+            @can('cud_user')
             <div class="card-actions justify-end">
                     		<a class="btn bg-primary text-white" href="/user/create">TAMBAH</a>
               </div>
+            @endcan
 
             <form action="/user/search" method="GET">
             @csrf
@@ -190,8 +193,17 @@
                   <td class="text-center text-black bg-white">{{ $user->username }}</td>
                   {{-- <td class="text-center text-black bg-white">{{ $user->password }}</td> --}}
                   <td class="text-center text-black bg-white">{{ $user->nama_level }}</td>
-                  <td class="text-black bg-white"><a class="btn btn-sm bg-yellow-400 text-black" href="/user/{{ $user->id }}/edit">EDIT</a></td>
+
+                  
                   <td class="text-black bg-white">
+                  @can('cud_user')
+                      <a class="btn btn-sm bg-yellow-400 text-black" href="/user/{{ $user->id }}/edit">EDIT</a>
+                  @endcan
+                  </td>
+                  
+                  
+                  <td class="text-black bg-white">
+                  @can('cud_user')
                     <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>
                         <!-- Put this part before </body> tag -->
                         <div class="modal" id="my-modal-2">
@@ -209,6 +221,8 @@
                                 </div>
                               </div>
                         </div>
+                        
+                  @endcan
                   </td>
                 </tr>
                 @endforeach

@@ -147,7 +147,7 @@
     </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn bg-red-400 text-black" href="">LOGOUT</a>
+            <a class="btn bg-red-400 text-black" href="/logout">LOGOUT</a>
     </div>
   </div>
 </div>
