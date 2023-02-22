@@ -29,7 +29,7 @@
             <input type="text" name="username" id="username" @error("username") invalid @enderror  placeholder="username" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
             @error("username")
             
-                <p class="text-red-700">Maaf, Username Tidak Valid</p>
+                <p class="text-red-700">Maaf, Username tidak valid</p>
                 
             @enderror
             <label for="password">
@@ -37,11 +37,11 @@
             </label>
             <input type="password" name="password" id='password' placeholder="password" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
             @error('password')
-                                    <p class="text-red-700">Maaf, Password Tidak Valid</p>
+                                    <p class="text-red-700">Maaf, Password tidak valid</p>
             @enderror
 
             <label for="level_user">
-              <h1 class="text-black">LEVEL USER</h1>
+              <h1 class="text-black">LEVEL PENGGUNA</h1>
             </label>
             <select class="select select-bordered w-full max-w-xs bg-white" name="kode_level" required>
               <option disabled selected align='center'>-- Level Aksess --</option>
@@ -51,9 +51,12 @@
             </select>
             @error("kode_level")
               
-                <p class="text-red-700">Maaf, Level Pengguna Tidak Valid</p>
+                <p class="text-red-700">Maaf, Level Pengguna tidak valid</p>
               
             @enderror
+            
+            <br>
+
             <div class="card-actions justify-end">
                   <button type='submit' class="btn btn-primary mx-auto">Login</button>
             </div>
