@@ -83,7 +83,7 @@
           </div>
       </ul>
     </div>
-    <a class="btn btn-ghost normal-case text-xl text-black" href="/about">ALINGGAM</a>
+    <a class="btn btn-ghost normal-case text-xl text-black" href="/dashboard">ALINGGAM</a>
   </div>
 
 
