@@ -159,14 +159,16 @@
             <p class="text-center">TAMBAH JURUSAN</p>
 		          <form action='/jurusan' method='post'>
                   @csrf
-                      <h1>Nama Jurusan</h1>
+                      <h1 class="mt-5">Nama Jurusan</h1>
                     	<input type="text" name="nama_jurusan" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" required/>
-                      <h1>Singkatan Jurusan</h1>
+                      <h1 class="mt-5">Singkatan Jurusan</h1>
                     	<input type="text" name="singkatan_jurusan" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" required/>
-                    		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
-                	</div>
+                    		
+                  
 		          </form> 
             </div>
+            <button type='submit' class="btn btn-primary mx-auto">Submit</button>
+                  <br>
         </div>
 
         

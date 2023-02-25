@@ -234,13 +234,13 @@
                       <input type="file" name="image" id="image" class="file-input file-input-bordered w-full max-w-xs bg-white" onchange="previewImage()" required/>
                     <br>
                     <img src="" class="img-preview object-scale-down w-1/2 md:w-1/4" alt="">
-
-
-                	<div class="card-actions justify-end">
-                        <button type='submit' class="btn btn-primary mx-auto">Submit</button>
-                	</div>
+          </div>
+                  <div class="flex justify-center ">
+                  <button type='submit' class="btn btn-primary text-white mt-5">Submit</button>
+                  </div>
 		          </form> 
           </div>
+                	
         </div>
 
         

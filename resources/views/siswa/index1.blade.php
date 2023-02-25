@@ -197,13 +197,12 @@
                   <td class="text-center text-black bg-white">{{ $siswa->tingkatan }}</td>
                   <td class="text-center text-black bg-white">{{ $siswa->nama_jurusan }}</td>
                   <td class="text-center text-black bg-white">{{ $siswa->nisn }}</td>
-
+                  
                   <td class="text-black bg-white">
                   @can('cud_siswa')
                   <a class="btn btn-sm bg-yellow-400 text-black" href="/siswa/{{ $siswa->id }}/edit">EDIT</a>
                   @endcan
                   </td>
-                  
                   <td class="text-black bg-white">
                   @can('cud_siswa')
                     <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>

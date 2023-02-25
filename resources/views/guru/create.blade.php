@@ -158,20 +158,20 @@
             <p class="text-center text-black">BUAT GURU</p>
 		          <form action='/guru' method='post'>
                   @csrf
-                      <h1 class="text-black">Nama</h1>
+                      <h1 class="text-black mt-5">Nama</h1>
                     	<input type="text" name="nama_guru" placeholder="Nama Guru" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
-                      <h1 class="text-black">Jenis Kelamin</h1>
+                      <h1 class="text-black mt-5">Jenis Kelamin</h1>
                       <select class="select select-bordered w-full max-w-xs bg-white text-black" name="jk_guru" required>
                         <option disabled selected>-- Pilih JK --</option>
                           <option value="Laki-Laki">Laki-Laki</option>
                           <option value="Perempuan">Perempuan</option>
                         </select>
-                      <h1 class="text-black">NIP</h1>
+                      <h1 class="text-black mt-5">NIP</h1>
                     	<input type="number" name="nip" placeholder="Nip" class="input input-bordered w-full max-w-xs bg-white text-black" maxlength="20" required/>
                       @error('nip')
                                     <p class="text-red-700">Maaf, Data Tidak Valid</p>
                     @enderror
-                	<div class="card-actions justify-end">
+                	<div class="card-actions justify-end mt-5">
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 

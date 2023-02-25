@@ -161,18 +161,18 @@
                   
                   @csrf
 
-                    <h1>Username</h1>
+                    <h1 class="mt-5">Username</h1>
                     	<input type="text" name="username" value="{{ $user->username }}" placeholder="usernane" class="input input-bordered w-full max-w-xs bg-white" required/>
                     @error('username')
                                     <p class="text-red-700">Maaf, Username Tidak Valid</p>
                     @enderror
-                    <h1>Password</h1>
+                    <h1 class="mt-5">Password</h1>
                     	<input type="password" name="password"  placeholder="password" class="input input-bordered w-full max-w-xs bg-white"/>
                     {{-- value="{{ $user->password }}" --}}
                     @error('password')
                                     <p class="text-red-700">Maaf, Password Tidak Valid</p>
                     @enderror
-                    <h1>Level Pengguna</h1>
+                    <h1 class="mt-5">Level Pengguna</h1>
                     <select class="select select-bordered w-full max-w-xs bg-white" name="kode_level" required>
                         @foreach($lu1 as $item01)
                           <option value="{{ $item01->id }}">
@@ -180,7 +180,8 @@
                           </option>
                         @endforeach
                         </select>
-                	<div class="card-actions justify-end">
+
+                	<div class="card-actions justify-end mt-5">
                         <button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 

@@ -158,12 +158,12 @@
             <p class="text-center">BUAT SISWA</p>
 		          <form action='/siswa' method='post'>
                   @csrf
-                      <h1>Nama</h1>
+                      <h1 class="mt-5">Nama</h1>
                     	<input type="text" name="nama_siswa" placeholder="Nama Siswa" class="input input-bordered w-full max-w-xs bg-white" required/>
                       <!-- <h1>Jenis Kelamin</h1>
             		      <input type="text" name="jk_siswa" placeholder="Jk Siswa" class="input input-bordered w-full max-w-xs bg-white" required/>
                       <label class="label"> -->
-                      <h1>Jenis Kelamin</h1>
+                      <h1 class="mt-5">Jenis Kelamin</h1>
                       <select class="select select-bordered w-full max-w-xs bg-white" name="jk_siswa" required>
                         <option disabled selected>-- Pilih JK --</option>
                           <option value="Laki-Laki">Laki-Laki</option>
@@ -201,13 +201,13 @@
                       @error('kode_jurusan')
                                     <p class="text-red-700">Maaf, Data Jurusan Tidak Ada</p>
                     @enderror
-                    <h1>NISN</h1>
+                    <h1  class="mt-5">NISN</h1>
                     	<input type="number" name="nisn" placeholder="Nisn" class="input input-bordered w-full max-w-xs bg-white" required/>
                       @error('nisn')
                                     <p class="text-red-700">Maaf, Data NISN Tidak Valid</p>
                     @enderror
 
-                	<div class="card-actions justify-end">
+                	<div class="card-actions justify-end mt-5">
                     		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 

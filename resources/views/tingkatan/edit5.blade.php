@@ -162,10 +162,11 @@
                   @csrf
                       <h1>Tingkatan</h1>
                     	<input type="text" name="tingkatan" value="{{ $tingkatan->tingkatan }}" placeholder="tingkatan" class="input input-bordered w-full max-w-xs bg-white" required/>
-                    		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
-                	</div>
+                    		
 		          </form> 
             </div>
+            <button type='submit' class="btn btn-primary mx-auto">Submit</button>
+                  <br>
         </div>
 
         

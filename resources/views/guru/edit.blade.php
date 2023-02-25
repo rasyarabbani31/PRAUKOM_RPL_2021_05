@@ -161,9 +161,9 @@
                   
                   @csrf
 
-                      <h1>Nama</h1>
+                      <h1 class="mt-5">Nama</h1>
                     	<input type="text" name="nama_guru" value="{{ $guru->nama_guru }}" placeholder="Nama Guru" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
-                      <h1>Jenis Kelamin</h1>
+                      <h1 class="mt-5">Jenis Kelamin</h1>
             		      <select class="select select-bordered w-full max-w-xs bg-white" name="jk_guru" required>
                         {{-- <option disabled selected>-- Pilih JK --</option> --}}
                           <option value="Laki-Laki">Laki-Laki</option>
@@ -172,12 +172,12 @@
                         @error('jk_guru')
                                     <p class="text-red-700">Maaf, Data Jenis Kelamin Tidak ada</p>
                     @enderror
-                        <h1>NIP</h1>
+                        <h1 class="mt-5">NIP</h1>
                     	<input type="number" name="nip" value="{{ $guru->nip }}" placeholder="Nama Guru" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
                       @error('nip')
                                     <p class="text-red-700">Maaf, Data Tidak Valid</p>
                     @enderror
-                	<div class="card-actions justify-end">
+                	<div class="card-actions justify-end mt-5">
                         <button type='submit' class="btn btn-primary mx-auto">Submit</button>
                 	</div>
 		          </form> 

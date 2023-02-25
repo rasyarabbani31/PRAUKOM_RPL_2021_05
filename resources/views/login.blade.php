@@ -24,7 +24,7 @@
         <form action='/login' method='post'>
             @csrf
             <label for="username">
-              <h1 class="text-black">USERNAME</h1>              
+              <h1 class="text-black mt-5">USERNAME</h1>              
             </label>
             <input type="text" name="username" id="username" @error("username") invalid @enderror  placeholder="username" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
             @error("username")
@@ -33,7 +33,7 @@
                 
             @enderror
             <label for="password">
-              <h1 class="text-black">PASSWORD</h1>            
+              <h1 class="text-black mt-5">PASSWORD</h1>            
             </label>
             <input type="password" name="password" id='password' placeholder="password" class="input input-bordered w-full max-w-xs bg-white text-black" required/>
             @error('password')
@@ -41,7 +41,8 @@
             @enderror
 
             <label for="level_user">
-              <h1 class="text-black">LEVEL PENGGUNA</h1>
+
+              <h1 class="text-black mt-5">LEVEL PENGGUNA</h1>
             </label>
             <select class="select select-bordered w-full max-w-xs bg-white" name="kode_level" required>
               <option disabled selected align='center'>-- Level Aksess --</option>
@@ -58,7 +59,7 @@
             <br>
 
             <div class="card-actions justify-end">
-                  <button type='submit' class="btn btn-primary mx-auto">Login</button>
+                  <button type='submit' class="btn btn-primary mx-auto m-5">Login</button>
             </div>
         </form> 
       </div>

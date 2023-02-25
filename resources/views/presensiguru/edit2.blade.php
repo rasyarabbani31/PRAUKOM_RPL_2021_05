@@ -162,7 +162,7 @@
                   
                   @csrf
 
-                      <h1>Tanggal</h1>
+                      <h1 class="mt-5"  >Tanggal</h1>
                     	<input type="date" name="tanggal" value="{{ $presensiguru->tanggal }}" placeholder="tanggal" class="input input-bordered w-full max-w-xs text-black bg-white" required/>
                       <!--<h1>Guru</h1>
             		      <input type="text" name="kode_guru" " placeholder="Guru" class="input input-bordered w-full max-w-xs" />
@@ -215,10 +215,9 @@
                       <input type="file" name="image" id="image" class="file-input file-input-bordered w-full max-w-xs bg-white" onchange="previewImage()" required/>
                     <br>
                     <img src="" class="img-preview object-scale-down w-1/2 md:w-1/4" alt="">
-
-                	</div>
-                  <div class="flex justify-center">
-                  <button type='submit' class="btn btn-primary text-white ">Submit</button>
+                    </div>
+                  <div class="flex justify-center ">
+                  <button type='submit' class="btn btn-primary text-white mt-5">Submit</button>
                   </div>
 		          </form> 
           </div>

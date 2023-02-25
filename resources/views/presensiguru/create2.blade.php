@@ -161,7 +161,7 @@
             <p class="text-center">BUAT PRESENSI GURU</p>
 		          <form action='/presensiguru' method='post'  enctype="multipart/form-data">
                   @csrf
-                      <h1>Tanggal</h1>
+                      <h1 class="mt-5">Tanggal</h1>
                     	<input type="date" name="tanggal" placeholder="tanggal" class="input input-bordered w-full max-w-xs bg-white" required />
                       <!--<h1>Guru</h1>
                     	<input type="text" name="kode_guru" placeholder="Guru" class="input input-bordered w-full max-w-xs" />
@@ -211,10 +211,10 @@
                     <br>
                     <img src="" class="img-preview object-scale-down w-1/2 md:w-1/4" alt="">
 
-                  <div class="card-actions justify-end">
                   
-                    		<button type='submit' class="btn btn-primary mx-auto">Submit</button>
-                	</div>
+                  <div class="flex justify-center ">
+                  <button type='submit' class="btn btn-primary text-white mt-5">Submit</button>
+                  </div>
 		          </form> 
             </div>
         </div>
