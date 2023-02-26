@@ -162,9 +162,9 @@
 
                   @csrf
                       <h1 class="mt-5">Jurusan</h1>
-                    	<input type="text" name="nama_jurusan" value="{{ $jurusan->nama_jurusan }}" placeholder="nama_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" required/>
+                    	<input type="text" name="nama_jurusan" value="{{ $jurusan->nama_jurusan }}" placeholder="nama jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" required/>
                       <h1 class="mt-5">Singkatan Jurusan</h1>
-                    	<input type="text" name="singkatan_jurusan" value="{{ $jurusan->singkatan_jurusan }}" placeholder="singkatan_jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" required/>
+                    	<input type="text" name="singkatan_jurusan" value="{{ $jurusan->singkatan_jurusan }}" placeholder="singkatan jurusan" class="input input-bordered w-full max-w-xs text-black bg-white" required/>
                   
                   
 		          </form> 

@@ -155,7 +155,7 @@
         <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
             @csrf
             <div class="card-body">
-            <p class="text-center text-black">BUAT GURU</p>
+            <p class="text-center text-black">TAMBAH GURU</p>
 		          <form action='/guru' method='post'>
                   @csrf
                       <h1 class="text-black mt-5">Nama</h1>

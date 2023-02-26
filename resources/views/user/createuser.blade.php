@@ -155,7 +155,7 @@
         <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
             @csrf
             <div class="card-body text-black">
-            <p class="text-center">BUAT PENGGUNA</p>
+            <p class="text-center">TAMBAH PENGGUNA</p>
 		          <form action='/user' method='post'>
                   @csrf
                       <h1 class="mt-5">Username</h1>

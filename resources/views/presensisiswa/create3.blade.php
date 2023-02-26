@@ -156,7 +156,7 @@
         <div class="card w-96 bg-green-600 shadow-xl mx-auto mt-8">
             @csrf
             <div class="card-body text-black">
-            <p class="text-center">BUAT PRESENSI SISWA</p>
+            <p class="text-center">TAMBAH PRESENSI SISWA</p>
 		          <form action='/presensisiswa' method='post' enctype="multipart/form-data">
                   @csrf
                       <h1 class="text-black">Tanggal</h1>
