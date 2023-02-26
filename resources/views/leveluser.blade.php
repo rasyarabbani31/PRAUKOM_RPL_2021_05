@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HISTORI GURU</title>
+  <title>LEVEL PENGGUNA</title>
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -157,26 +157,27 @@
 
 <div class="card w-1/2 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
           <div class="card-body">
-            <div class="overflow-x-auto shadow-xl text-primary-content">
-            <p class="text-black text-center font-medium text-xl">Level Pengguna</P>
-            <br>
-              <table class="table w-full text-primary-content">
-                <thead>
-                  <tr class="space-x-4 text-white text-center">
-                      <th class="text-black bg-white">NO</th>
-                      <th class="text-black bg-white">Nama Level</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @foreach($lv as $lvs)
-                    <tr class="text-white text-center">
-                      <th class="text-black bg-white">{{ $loop->iteration }}</th>
-                      <td class="text-center text-black bg-white">{{ $lvs->nama_level}}</td>
-                    @endforeach
-                </tbody>
-              </table>
-            </div>
+                <div class="overflow-x-auto shadow-xl text-primary-content">
+                    <p class="text-black text-center font-medium text-xl">Level Pengguna</P>
+                    <br>
+                      <table class="table w-full text-primary-content">
+                        <thead>
+                          <tr class="space-x-4 text-white text-center">
+                              <th class="text-black bg-white">NO</th>
+                              <th class="text-black bg-white">Nama Level</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($lv as $lvs)
+                            <tr class="text-white text-center">
+                              <th class="text-black bg-white">{{ $loop->iteration }}</th>
+                              <td class="text-center text-black bg-white">{{ $lvs->nama_level}}</td>
+                            @endforeach
+                        </tbody>
+                      </table>
+                </div>
           </div>
+</div>
 
 
    
