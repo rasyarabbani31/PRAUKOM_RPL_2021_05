@@ -158,7 +158,7 @@
 <div class="card w-1/2 bg-green-600 shadow-xl text-primary-content mx-auto mt-8">
           <div class="card-body">
                 <div class="overflow-x-auto shadow-xl text-primary-content">
-                    <p class="text-black text-center font-medium text-xl">Level Pengguna</P>
+                    <p class="text-black text-center font-medium text-xl">LEVEL PENGGUNA</P>
                     <br>
                       <table class="table w-full text-primary-content">
                         <thead>
