@@ -159,11 +159,11 @@
           <table class="table w-full text-primary-content">
             <thead>
 
-            {{-- @can('cud_user') --}}
+             @can('cud_user')
             <div class="card-actions justify-end">
                     		<a class="btn bg-primary text-white" href="/user/create">TAMBAH</a>
               </div>
-            {{-- @endcan --}}
+             @endcan
 
             <form action="/user/search" method="GET">
             @csrf
