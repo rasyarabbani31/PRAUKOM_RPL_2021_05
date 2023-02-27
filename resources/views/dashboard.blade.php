@@ -153,12 +153,12 @@
 </div>
 
 
-@php
+{{-- @php
                         $guru =  DB::table('guru')->count('id');
                         $siswa =  DB::table('siswa')->count('id');
                         $kelas =  DB::table('kelas')->count('id');
                         $jurusan =  DB::table('jurusan')->count('id');
-@endphp
+@endphp --}}
 
 
 <div class="container mx-auto lg:px-[20rem]">
