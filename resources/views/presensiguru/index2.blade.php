@@ -187,19 +187,19 @@
               </tr>
             </thead>
             <tbody>
-                @foreach($guru as $presensiguru)
+                @foreach($presensiguru as $pg)
                 <tr class="text-white">
                   <th class="text-center text-black bg-white">{{ $loop->iteration }}</th>
-                  <td class="text-center text-black bg-white">{{ $presensiguru->tanggal }}</td>
-                  <td class="text-center text-black bg-white">{{ $presensiguru->nama_guru }}</td>
-                  <td class="text-center text-black bg-white">{{ $presensiguru->keterangan }}</td>
-                  <td class="text-center text-black bg-white">{{ $presensiguru->agenda_kbm }}</td>
+                  <td class="text-center text-black bg-white">{{ $pg->tanggal }}</td>
+                  <td class="text-center text-black bg-white">{{ $pg->nama_guru }}</td>
+                  <td class="text-center text-black bg-white">{{ $pg->keterangan }}</td>
+                  <td class="text-center text-black bg-white">{{ $pg->agenda_kbm }}</td>
                   <td class="text-center text-black bg-white">
-                    <a href="{{ asset('storage/'.$presensiguru->gambar) }}" target="_blank" class="group">
-                        <img src="{{ asset('storage/'.$presensiguru->gambar) }}" class="mx-auto shadow  group-hover:brightness-50 ">
+                    <a href="{{ asset('storage/'.$pg->gambar) }}" target="_blank" class="group">
+                        <img src="{{ asset('storage/'.$pg->gambar) }}" class="mx-auto shadow  group-hover:brightness-50 ">
                     </a>
                   </td>
-                  <td class="text-black bg-white"><a class="btn btn-sm bg-yellow-400 text-black" href="/presensiguru/{{ $presensiguru->id }}/edit">EDIT</a></td>
+                  <td class="text-black bg-white"><a class="btn btn-sm bg-yellow-400 text-black" href="/presensiguru/{{ $pg->id }}/edit">EDIT</a></td>
                   <td class="text-black bg-white">
                     <a href="#my-modal-2" class="btn btn-sm bg-red-400 text-black">HAPUS</a>
                         <!-- Put this part before </body> tag -->
@@ -210,7 +210,7 @@
                                   <p>Data Presensi Siswa akan dihapus dan data tidak dapat kembali</p>
                                 <div class="modal-action">
                                     <a href="" class="btn btn-sm bg-yellow-400 text-black">TIDAK</a>
-                        <form action="/presensiguru/{{ $presensiguru->id }}" method="post">
+                        <form action="/presensiguru/{{ $pg->id }}" method="post">
                             @csrf
                             @method("delete")
                             <button class="btn btn-sm bg-red-400 text-black" type="submit">DELETE</button>

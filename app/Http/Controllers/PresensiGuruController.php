@@ -11,21 +11,18 @@ class PresensiGuruController extends Controller
     public function presensiguru()
     {
         //$presensi_gurus = PresensiGuru::orderBy('tanggal', 'desc')->get(); aaa aaaa
-        $guru = DB::table('presensi_guru')
-            ->join('guru','presensi_guru.kode_guru','=','guru.id')
-            ->join('keterangan_izin', 'presensi_guru.kode_keterangan', '=', 'keterangan_izin.id')
-            ->select('guru.*', 'keterangan_izin.*','presensi_guru.*')
-            ->orderBy('tanggal', 'desc')
+        $presensiguru = DB::table('nama_presensi_guru') 
+            ->orderByDesc('tanggal')
             ->get();
-        
-        return view('presensiguru.index2', compact('guru') );
+            
+        return view('presensiguru.index2', compact('presensiguru') );
     }
 
     public function searchpresensiguru(Request $request)
     {
         //$siswas = Siswa::orderBy('kode_kelas', 'asc') ->get();
         $katakunci = $request->katakunci;
-        $guru = DB::table('presensi_guru')
+        $presensiguru = DB::table('presensi_guru')
         ->join('guru','presensi_guru.kode_guru','=','guru.id')
         ->join('keterangan_izin', 'presensi_guru.kode_keterangan', '=', 'keterangan_izin.id')
         ->select('guru.*', 'keterangan_izin.*','presensi_guru.*')
@@ -39,7 +36,7 @@ class PresensiGuruController extends Controller
         ->orderBy('agenda_kbm','asc')
         ->get();
 
-        return view ('presensiguru.index2', compact('guru'));
+        return view ('presensiguru.index2', compact('presensiguru'));
 
     }
 
@@ -74,11 +71,12 @@ class PresensiGuruController extends Controller
 
     public function editpresensiguru($id)
     {
+    
         $presensiguru = PresensiGuru::where('id', $id)->first();
         $guru1 = DB::table('guru') ->get();
         $keterangan = DB::table('keterangan_izin') ->get();
        
-        return view('presensiguru.edit2', ['presensiguru' => $presensiguru], compact('guru1','keterangan'));
+        return view('presensiguru.edit2', compact('presensiguru','guru1','keterangan'));
     }
 
     public function updatepresensiguru(Request $request, $id)
